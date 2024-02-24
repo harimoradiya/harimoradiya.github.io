@@ -1,4 +1,0 @@
-#Admob configuration
-google.com, pub-8686797985910688, DIRECT, f08c47fec0942fa0
-# Other networks
-pubmatic.com, 156177, RESELLER, 5d62403b186f2ace
