@@ -1,4 +1,4 @@
-# Sad Ellie's cool website
+# Hari Moradiya's cool website
 
 ```
 npm run dev
