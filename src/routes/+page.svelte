@@ -18,9 +18,7 @@
 	import Telegram from "./Telegram.svelte";
 </script>
 
-<svelte:head>
-    <title>Hari Moradiya</title>
-</svelte:head>
+
 <div class="flex flex-col place-items-center p-8 bg-blue-50 dark:bg-blue-950 text-black dark:text-white">
 	<div
 		class="flex flex-col py-16 xl:py-32 rounded-3xl place-items-center gap-8 bg-center bg-cover w-full relative dark:invert"
