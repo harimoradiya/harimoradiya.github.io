@@ -1,0 +1,22 @@
+---
+// src/components/BlogPost.astro
+interface Props {
+  title: string;
+  excerpt: string;
+  tags: string[];
+  date: string;
+}
+
+const { title, excerpt, tags, date } = Astro.props;
+---
+
+<article class="post-card">
+  <h2>{title}</h2>
+  <time datetime={date}>{new Date(date).toLocaleDateString()}</time>
+  <p>{excerpt}</p>
+  <div class="tags">
+    {tags.map(tag => (
+      <span class="tag">{tag}</span>
+    ))}
+  </div>
+</article>

@@ -1,0 +1,378 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+
+const skills = [
+  { name: "Android Development", level: 90 },
+  { name: "Kotlin", level: 85 },
+  { name: "Java", level: 80 },
+  { name: "Material Design", level: 88 },
+  { name: "Flutter", level: 75 },
+];
+const experiences = [
+    {
+        title: "Senior Android Developer",
+        company: "Tech Company",
+        period: "2022 - Present",
+        description: "Leading Android development team, implementing Material You design, and developing complex features."
+    },
+    {
+        title: "Android Developer",
+        company: "Mobile Agency",
+        period: "2020 - 2022",
+        description: "Developed and maintained multiple Android applications using Kotlin and Java."
+    }
+];
+
+
+const socialLinks = [
+    { name: 'GitHub', icon: '🌟', url: 'https://github.com/harimoradiya' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/hari-moradiya-0a7145179/' },
+    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com/hari_moradiya_' },
+    { name: 'Instagram', icon: '📸', url: 'https://instagram.com/hari_moradiya1610' }
+];
+---
+
+<Layout>
+  <div class="hero-section">
+    <div class="profile-card">
+      <div class="profile-image">HM</div>
+      <h1 class="animate-up">Hari Moradiya</h1>
+      <p class="title animate-up-delay-1">Software Engineer</p>
+      <p class="subtitle animate-up-delay-2">Specialized in Android Development</p>
+      <div class="social-links animate-up-delay-2">
+        {socialLinks.map(link => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" class="social-link">
+                <span class="icon">{link.icon}</span>
+                <span class="name">{link.name}</span>
+            </a>
+        ))}
+    </div>
+    </div>
+  </div>
+
+  <section class="about-preview">
+    <h2 class="section-title animate-fade-in">About Me</h2>
+    <p class="about-text animate-fade-in-delay-1">
+      I'm Hari Moradiya, a passionate Software Engineer focusing on Android development.
+      I create intuitive and performant mobile applications that follow Material Design principles
+      and deliver exceptional user experiences.
+    </p>
+    
+    <div class="skills-container">
+      {skills.map((skill, index) => (
+        <div class="skill-bar animate-width" style={`--delay: ${index * 0.2}s`}>
+          <span class="skill-name">{skill.name}</span>
+          <div class="skill-progress">
+            <div class="skill-level" style={`width: ${skill.level}%`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+        <!-- Experience Section -->
+        <section class="content-section animate-fade-in">
+          <h2 class="section-title">Experience</h2>
+          <div class="experience-timeline">
+              {experiences.map((exp, index) => (
+                  <div class="experience-card animate-up" style={`--delay: ${index * 0.2}s`}>
+                      <div class="experience-header">
+                          <h3 class="experience-title">{exp.title}</h3>
+                          <span class="experience-period">{exp.period}</span>
+                      </div>
+                      <p class="company-name">{exp.company}</p>
+                      <p class="experience-description">{exp.description}</p>
+                  </div>
+              ))}
+          </div>
+      </section>
+
+  <style>
+    /* Hero Section */
+    .hero-section {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-container), var(--surface-variant));
+      padding: 2rem;
+      margin: -2rem -2rem 2rem -2rem;
+    }
+
+    .profile-card {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: var(--elevation-3);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      background: var(--primary);
+      color: var(--on-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+    .title {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--on-surface-variant);
+    }
+
+    .content-section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--on-surface);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: var(--on-surface-variant);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .experience-timeline {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--elevation-1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            color: var(--on-surface);
+            font-size: 1.25rem;
+        }
+
+        .experience-period {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .company-name {
+            color: var(--on-surface-variant);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description {
+            color: var(--on-surface-variant);
+            line-height: 1.6;
+        }
+    /* Skills Section */
+    .skills-container {
+      margin-top: 2rem;
+    }
+
+    .skill-bar {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-name {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--on-surface);
+      font-weight: 500;
+    }
+
+    .skill-progress {
+      height: 8px;
+      background: var(--surface-variant);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transform-origin: left;
+      animation: growWidth 1.5s ease-out forwards;
+    }
+
+    /* Post Grid */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .post-card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--elevation-1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--elevation-2);
+    }
+
+    .post-content {
+      padding: 1.5rem;
+    }
+
+    .post-category {
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .post-title {
+      margin: 0.5rem 0;
+      color: var(--on-surface);
+    }
+
+    .post-excerpt {
+      color: var(--on-surface-variant);
+      margin-bottom: 1rem;
+    }
+
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--on-surface-variant);
+      font-size: 0.875rem;
+    }
+
+    .read-more {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { 
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes growWidth {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .animate-up {
+      opacity: 0;
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .animate-up-delay-1 {
+      opacity: 0;
+      animation: slideUp 0.6s ease 0.2s forwards;
+    }
+
+    .animate-up-delay-2 {
+      opacity: 0;
+      animation: slideUp 0.6s ease 0.4s forwards;
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-fade-in-delay-1 {
+      opacity: 0;
+      animation: fadeIn 1s ease 0.3s forwards;
+    }
+
+    .animate-width {
+      animation-delay: var(--delay);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: 50vh;
+      }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,296 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+
+const socialLinks = [
+    { name: 'GitHub', icon: '🌟', url: 'https://github.com/harimoradiya' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/harimoradiya' },
+    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com/harimoradiya' },
+    { name: 'Instagram', icon: '📸', url: 'https://instagram.com/harimoradiya' }
+];
+
+const experiences = [
+    {
+        title: "Senior Android Developer",
+        company: "Tech Company",
+        period: "2022 - Present",
+        description: "Leading Android development team, implementing Material You design, and developing complex features."
+    },
+    {
+        title: "Android Developer",
+        company: "Mobile Agency",
+        period: "2020 - 2022",
+        description: "Developed and maintained multiple Android applications using Kotlin and Java."
+    }
+];
+
+const skills = [
+    { name: "Android Development", level: 90 },
+    { name: "Kotlin", level: 85 },
+    { name: "Java", level: 80 },
+    { name: "Material Design", level: 88 },
+    { name: "Flutter", level: 75 },
+];
+---
+
+<Layout>
+    <div class="about-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="profile-card animate-up">
+                <div class="profile-image">HM</div>
+                <h1 class="animate-up">Hari Moradiya</h1>
+                <p class="title animate-up-delay-1">Android Developer</p>
+                <div class="social-links animate-up-delay-2">
+                    {socialLinks.map(link => (
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" class="social-link">
+                            <span class="icon">{link.icon}</span>
+                            <span class="name">{link.name}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                I'm a passionate Android Developer with expertise in creating intuitive and performant mobile applications. 
+                With a strong foundation in Kotlin and Java, I specialize in developing apps that follow Material Design principles 
+                and deliver exceptional user experiences. My journey in mobile development has equipped me with deep knowledge 
+                of the Android ecosystem and modern development practices.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-timeline">
+                {experiences.map((exp, index) => (
+                    <div class="experience-card animate-up" style={`--delay: ${index * 0.2}s`}>
+                        <div class="experience-header">
+                            <h3 class="experience-title">{exp.title}</h3>
+                            <span class="experience-period">{exp.period}</span>
+                        </div>
+                        <p class="company-name">{exp.company}</p>
+                        <p class="experience-description">{exp.description}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                {skills.map((skill, index) => (
+                    <div class="skill-bar animate-width" style={`--delay: ${index * 0.2}s`}>
+                        <div class="skill-header">
+                            <span class="skill-name">{skill.name}</span>
+                            <span class="skill-percentage">{skill.level}%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-level" style={`width: ${skill.level}%`}></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .about-container {
+            margin-top: -2rem;
+        }
+
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-container), var(--surface-variant));
+            padding: 2rem;
+            margin: 0 -2rem 2rem -2rem;
+        }
+
+        .profile-card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: var(--elevation-2);
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            background: var(--primary);
+            color: var(--on-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0 auto 2rem auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--on-surface);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: var(--on-surface-variant);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .experience-timeline {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--elevation-1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            color: var(--on-surface);
+            font-size: 1.25rem;
+        }
+
+        .experience-period {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .company-name {
+            color: var(--on-surface-variant);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description {
+            color: var(--on-surface-variant);
+            line-height: 1.6;
+        }
+
+        .skills-container {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            color: var(--on-surface);
+            font-weight: 500;
+        }
+
+        .skill-percentage {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .skill-progress {
+            height: 8px;
+            background: var(--surface-variant);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+            transform-origin: left;
+            animation: growWidth 1.5s ease-out forwards;
+        }
+
+        @keyframes growWidth {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                padding: 1rem;
+            }
+
+            .profile-card {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</Layout>
