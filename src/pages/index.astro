@@ -5,14 +5,14 @@ import Layout from '../layouts/Layout.astro';
 const skills = [
   { name: "Android Development", level: 90 },
   { name: "Kotlin", level: 85 },
-  { name: "Java", level: 80 },
+  { name: "Java", level: 85 },
   { name: "Material Design", level: 88 },
-  { name: "Flutter", level: 75 },
+  { name: "Python", level: 85 },
 ];
 const experiences = [
     {
         title: "Software Engineer - Founder",
-        company: "PrasLTD",
+        company: "Whatsbug",
         period: "2024 - Present",
         description: "Leading Android development team, implementing Material You design, and developing complex features."
     },
@@ -24,6 +24,32 @@ const experiences = [
     }
 ];
 
+const projects = [
+  {
+    title: "WearOS-Stopwatch",
+    category: "Android App",
+    excerpt: "About Stopwatch for Wear OS.",
+    techStack: "Kotlin, Jetpack compose, Material Design",
+    url: "https://github.com/harimoradiya/WearOS-Stopwatch",
+  },
+  {
+    title: "Network-Discovery",
+    category: "Android App",
+    excerpt: "Discover services which is connected to your network.",
+    techStack: "Android, Kotlin, Flow, Coroutine",
+    url: "https://github.com/harimoradiya/Network-Discovery",
+  },
+];
+
+const education = [
+  {
+    degree: "Bachelor's Degree in Computer Science",
+    period: "2018-2022",
+    institution: "Example University",
+    description: "Coursework: Data Structures, Algorithms, Computer Systems, etc.",
+  },
+];
+
 
 const socialLinks = [
     { name: 'GitHub', icon: '🌟', url: 'https://github.com/harimoradiya' },
@@ -31,13 +57,17 @@ const socialLinks = [
     { name: 'Twitter', icon: '🐦', url: 'https://twitter.com/hari_moradiya_' },
     { name: 'Instagram', icon: '📸', url: 'https://instagram.com/hari_moradiya1610' }
 ];
+
+
 ---
 
 <Layout>
   <div class="hero-section">
     <div class="profile-card">
       <div class="profile-image">HM</div>
-      <h1 class="animate-up">Hari Moradiya</h1>
+
+      <h1 class="typing-animation">Hello, I'm Hari Moradiya</h1>
+  
       <p class="title animate-up-delay-1">Software Engineer</p>
       <p class="subtitle animate-up-delay-2">Specialized in Android Development</p>
       <div class="social-links animate-up-delay-2">
@@ -70,6 +100,28 @@ const socialLinks = [
       ))}
     </div>
   </section>
+
+  <!-- Projects Section -->
+<section class="content-section animate-fade-in">
+  <h2 class="section-title">Projects</h2>
+  <div class="post-grid">
+    {projects.map((project, index) => (
+      <a href={project.url} target="_blank" rel="noopener noreferrer" class="post-card animate-up" style={`--delay: ${index * 0.2}s`}>
+        <div class="post-content">
+          <p class="post-category">{project.category}</p>
+          <h3 class="post-title">{project.title}</h3>
+          <p class="post-excerpt">{project.excerpt}</p>
+          <div class="post-meta">
+            <span>{project.techStack}</span>
+            <span class="read-more">Read More</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+
 
 
         <!-- Experience Section -->
@@ -375,4 +427,24 @@ const socialLinks = [
       }
     }
   </style>
+
+  <script>
+    // Typing Animation
+const typingAnimation = document.querySelector('.typing-animation');
+const text = typingAnimation.textContent;
+const typingSpeed = 100;
+
+let index = 0;
+
+function type() {
+  typingAnimation.textContent = text.slice(0, index);
+
+  if (index < text.length) {
+    index++;
+    setTimeout(type, typingSpeed);
+  }
+}
+
+type();
+  </script>
 </Layout>
