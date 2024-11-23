@@ -430,16 +430,16 @@ const socialLinks = [
 
   <script>
     // Typing Animation
-const typingAnimation = document.querySelector('.typing-animation');
-const text = typingAnimation.textContent;
+    const typingAnimation = document.querySelector('.typing-animation');
+    const text = typingAnimation!.textContent;
 const typingSpeed = 100;
 
 let index = 0;
 
 function type() {
-  typingAnimation.textContent = text.slice(0, index);
+  typingAnimation!.textContent = text!.slice(0, index);
 
-  if (index < text.length) {
+  if (index < text!.length) {
     index++;
     setTimeout(type, typingSpeed);
   }
