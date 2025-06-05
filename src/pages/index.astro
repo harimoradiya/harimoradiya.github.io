@@ -10,12 +10,7 @@ const skills = [
   { name: "Python", level: 85 },
 ];
 const experiences = [
-    {
-        title: "Software Engineer - Founder",
-        company: "Whatsbug",
-        period: "2024 - Present",
-        description: "Leading Android development team, implementing Material You design, and developing complex features."
-    },
+   
     {
         title: "Android Developer",
         company: "Vasuka",
@@ -25,6 +20,27 @@ const experiences = [
 ];
 
 const projects = [
+   {
+    title: "StatusSaver",
+    category: "Android App",
+    excerpt: "An application to save statuses from social media platforms.",
+    techStack: "Android, Kotlin",
+    url: "https://github.com/harimoradiya/StatusSaver"
+  },
+  {
+    title: "Background-Remover-App",
+    category: "Android App & Backend",
+    excerpt: "An app to remove the background from images.",
+    techStack: "Android, Kotlin, Image Processing",
+    url: "https://github.com/harimoradiya/Background-Remover-App"
+  },
+  {
+    title: "Photomatch",
+    category: "Android App",
+    excerpt: "An app for matching photos based on certain criteria.",
+    techStack: "Android, Kotlin, Machine Learning",
+    url: "https://github.com/harimoradiya/Photomatch"
+  },
 {
     title: "RMS",
     category: "REST-API Backend",
@@ -66,7 +82,7 @@ const socialLinks = [
     { name: 'GitHub', icon: '🌟', url: 'https://github.com/harimoradiya' },
     { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/hari-moradiya-0a7145179/' },
     { name: 'Twitter', icon: '🐦', url: 'https://twitter.com/hari_moradiya_' },
-    { name: 'Instagram', icon: '📸', url: 'https://instagram.com/hari_moradiya1610' }
+    { name: 'Instagram', icon: '📸', url: 'https://instagram.com/hk_moradiya' }
 ];
 ---
 
@@ -78,7 +94,7 @@ const socialLinks = [
       <h1 class="typing-animation">Hello, I'm Hari Moradiya</h1>
   
       <p class="title animate-up-delay-1">Software Engineer</p>
-      <p class="subtitle animate-up-delay-2"></p>
+      <p class="subtitle animate-up-delay-2">Researching</p>
       <div class="social-links animate-up-delay-2">
         {socialLinks.map(link => (
             <a href={link.url} target="_blank" rel="noopener noreferrer" class="social-link">
@@ -93,12 +109,10 @@ const socialLinks = [
   <section class="about-preview">
     <h2 class="section-title animate-fade-in">About Me</h2>
     <p class="about-text animate-fade-in-delay-1">
-      I'm Hari Moradiya, a passionate Software Engineer focusing on Android development.
-      I create intuitive and performant mobile applications that follow Material Design principles
-      and deliver exceptional user experiences.
+    I,m software engineer, specializes in Android and backend development. With expertise in creating efficient mobile applications and robust server-side solutions, I am dedicated to delivering high-quality software products. My work is characterized by innovation and a commitment to excellence in technology.
     </p>
     
-    <div class="skills-container">
+    <!-- <div class="skills-container">
       {skills.map((skill, index) => (
         <div class="skill-bar animate-width" style={`--delay: ${index * 0.2}s`}>
           <span class="skill-name">{skill.name}</span>
@@ -107,7 +121,7 @@ const socialLinks = [
           </div>
         </div>
       ))}
-    </div>
+    </div> -->
   </section>
 
   <!-- Projects Section -->
