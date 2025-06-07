@@ -5,5 +5,6 @@ import { defineConfig } from 'astro/config';
 // export default {}
 
 export default defineConfig({
-    site: 'https://harimoradiya.github.io',
-  })
+  site: 'https://harimoradiya.github.io',
+  base: '/',
+});
