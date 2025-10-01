@@ -831,11 +831,13 @@ import Layout from '../layouts/Layout.astro';
     let currentIndex = 0;
 
     function updateCarousel() {
-      const scrollPosition = currentIndex * (screenshots[0].offsetWidth + 32); // width + gap
-      carousel.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+      const scrollPosition = currentIndex * ((screenshots[0] as HTMLElement).offsetWidth + 32); // width + gap
+      if (carousel) {
+        carousel.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
 
       // Update indicators
       indicators.forEach((indicator, index) => {
@@ -848,15 +850,19 @@ import Layout from '../layouts/Layout.astro';
     }
 
     // Event listeners for controls
-    prevBtn.addEventListener('click', () => {
-      currentIndex = Math.max(0, currentIndex - 1);
-      updateCarousel();
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = Math.max(0, currentIndex - 1);
+        updateCarousel();
+      });
+    }
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = Math.min(screenshots.length - 1, currentIndex + 1);
-      updateCarousel();
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = Math.min(screenshots.length - 1, currentIndex + 1);
+        updateCarousel();
+      });
+    }
 
     // Event listeners for indicators
     indicators.forEach((indicator, index) => {
@@ -871,13 +877,13 @@ import Layout from '../layouts/Layout.astro';
     
     faqQuestions.forEach(question => {
       question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
+        const answer = question.nextElementSibling as HTMLElement;
         const isOpen = answer.style.display === 'block';
         
         answer.style.display = isOpen ? 'none' : 'block';
-        question.style.fontWeight = isOpen ? '700' : '700';
-        question.style.color = isOpen ? 'var(--on-surface)' : 'var(--primary)';
-        question.style.setProperty('--after-content', isOpen ? '+' : '-');
+        (question as HTMLElement).style.fontWeight = isOpen ? '700' : '700';
+        (question as HTMLElement).style.color = isOpen ? 'var(--on-surface)' : 'var(--primary)';
+        (question as HTMLElement).style.setProperty('--after-content', isOpen ? '+' : '-');
       });
     });
   });
