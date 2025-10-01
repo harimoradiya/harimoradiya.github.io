@@ -1,0 +1,884 @@
+---
+// src/pages/direct-chat.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="product-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="product-header animate-up">
+        <h1>WiFi Mouse Remote Control</h1>
+        <p class="tagline">Turn Android into wireless mouse/keyboard for PC, Mac, Linux over WiFi network</p>
+        <div class="tech-badge-container">
+          <span class="tech-badge">Android</span>
+          <span class="tech-badge">Kotlin</span>
+          <span class="tech-badge">Material Design</span>
+                  <span class="tech-badge">Jetpack Compose</span>
+                             <span class="tech-badge">Compose Multiplatform</span>
+        </div>
+      </div>
+    </section>
+     <!-- Download Section -->
+  <!-- Download Section -->
+<section id="download" class="download-section">
+  <h2>Download WiFi Mouse</h2>
+  <p class="download-description">Get the complete WiFi Mouse solution - Android client and desktop server for seamless remote control.</p>
+  
+  <div class="download-grid">
+    <!-- Android Client -->
+    <div class="download-category">
+      <h3>Android Client</h3>
+      <div class="download-options">
+        <a href="#" class="download-button play-store">
+          <span class="download-icon">📱</span>
+          <span class="download-text">
+            <span class="download-label">Get on Play Store</span>
+            <span class="version">Coming Soon</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Desktop Server -->
+    <div class="download-category">
+      <h3>Desktop Server</h3>
+      <div class="download-options">
+        <a href="#" class="download-button windows">
+          <span class="download-icon">🪟</span>
+          <span class="download-text">
+            <span class="download-label">Windows Server</span>
+            <span class="version">v1.0.0 | 25 MB</span>
+          </span>
+        </a>
+    
+        
+        <a href="#" class="download-button mac">
+          <span class="download-icon">🍎</span>
+          <span class="download-text">
+            <span class="download-label">macOS Server</span>
+            <span class="version">v1.0.0 | 28 MB</span>
+          </span>
+        </a>
+             
+        <a href="#" class="download-button linux">
+          <span class="download-icon">🐧</span>
+          <span class="download-text">
+            <span class="download-label">Linux Server</span>
+            <span class="version">v1.0.0 | 22 MB</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="requirements">
+    <div class="requirement-group">
+      <h3>Android Client Requirements</h3>
+      <ul>
+        <li>Android 5.0 (API level 21) or higher</li>
+        <li>WiFi network connection</li>
+        <li>10MB free storage space</li>
+        <li>Network access permissions</li>
+      </ul>
+    </div>
+    
+    <div class="requirement-group">
+      <h3>Desktop Server Requirements</h3>
+      <ul>
+        <li>Windows 10/11, macOS 10.14+, or Linux</li>
+        <li>Java Runtime Environment (JDK 11+)</li>
+        <li>WiFi network connection</li>
+        <li>Accessibility permissions required</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="setup-note">
+    <p><strong>Setup Instructions:</strong> Install the server on your computer first, then download the Android client. Both devices must be connected to the same WiFi network.</p>
+  </div>
+</section>
+
+
+    <!-- App Overview -->
+    <section class="app-overview">
+      <div class="overview-content">
+        <h2>About Wifi Mouse</h2>
+        <p>
+         Transform your Android device into a wireless mouse & keyboard controller for PC/Mac/Linux. The Kotlin Multiplatform server runs on your computer while the Android client provides intuitive touch gestures, full QWERTY keyboard, app launching, and real-time connection management. Features include precise cursor movement, left/right click, scrolling, drag & drop, function keys, and accessibility integration. Secure local WiFi communication with no internet required. Easy setup with IP/port connection.
+        </p>
+        <div class="cta-buttons">
+          <a href="#download" class="primary-button">Download APK</a>
+          <a href="https://github.com/harimoradiya/StatusSaver" target="_blank" class="secondary-button">View on GitHub</a>
+        </div>
+      </div>
+      <div class="overview-image">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="app-preview">
+              <div class="app-icon">WM</div>
+              <div class="app-name">WiFi Mouse</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🖱️</div>
+          <h3>Precise Mouse Control</h3>
+          <p>Transform your Android touchscreen into a responsive wireless mouse with smooth cursor movement and multi-touch gestures.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⌨️</div>
+          <h3>Full QWERTY Keyboard</h3>
+          <p>Complete keyboard input with function keys, special characters, and system shortcuts for seamless typing experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Cross-Platform Server</h3>
+          <p>Kotlin Multiplatform server supports Windows, macOS, and Linux with real-time device monitoring and status updates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>App Launcher</h3>
+          <p>View and launch installed applications on your computer remotely with search functionality and instant access.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3>WiFi Connection</h3>
+          <p>Secure local network communication with easy IP and port setup - no internet required for operation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy Focused</h3>
+          <p>All communication stays on your local network with accessibility permissions and open-source transparency.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- How to Use Section -->
+<section class="how-to-use-section">
+  <h2>How to Use WiFi Mouse</h2>
+  <p class="usage-intro">Follow these simple steps to set up and start controlling your computer wirelessly with your Android device.</p>
+  
+  <div class="usage-steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Download & Install Server</h3>
+      <ul>
+        <li>Download the WiFi Mouse Server for your operating system (Windows, macOS, or Linux)</li>
+        <li>Install the server application on your PC or laptop</li>
+        <li>Run the server with administrator privileges (required for full functionality)</li>
+        <li>Note the IP address and port number displayed in the server interface</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Install Android App</h3>
+      <ul>
+        <li>Download and install WiFi Mouse Remote Control app from Google Play Store</li>
+        <li>Open the app on your Android device</li>
+        <li>Grant necessary network access permissions</li>
+        <li>Ensure both devices are connected to the same WiFi network</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Connect Devices</h3>
+      <ul>
+        <li>Open the WiFi Mouse app and tap "Connect" or "Auto Connect"</li>
+        <li>Your server device should appear in the device list automatically</li>
+        <li>Alternatively, scan the QR code displayed on your server app</li>
+        <li>Or manually enter the server IP address and port number</li>
+        <li>Tap to connect when the server is detected</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>Start Controlling</h3>
+      <ul>
+        <li><strong>Mouse Control:</strong> Slide your finger on the touchpad area to move the cursor</li>
+        <li><strong>Clicking:</strong> Single tap for left click, two-finger tap for right click</li>
+        <li><strong>Scrolling:</strong> Two-finger swipe up/down for vertical scrolling</li>
+        <li><strong>Keyboard:</strong> Tap the keyboard button to open virtual QWERTY keyboard</li>
+        <li><strong>App Launcher:</strong> Access and launch installed applications remotely</li>
+        <li><strong>Settings:</strong> Adjust mouse sensitivity and customize gestures</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="usage-tips">
+    <h3>Pro Tips</h3>
+    <div class="tips-grid">
+      <div class="tip">
+        <strong>Network Requirements:</strong> Both devices must be on the same WiFi network for connection
+      </div>
+      <div class="tip">
+        <strong>Firewall Settings:</strong> Allow TCP port 8080 (or custom port) through your computer's firewall
+      </div>
+      <div class="tip">
+        <strong>Permissions:</strong> Grant accessibility permissions on your computer for full mouse and keyboard control
+      </div>
+      <div class="tip">
+        <strong>Gestures:</strong> Use multi-touch gestures for advanced controls like drag & drop operations
+      </div>
+    </div>
+  </div>
+</section>
+
+   
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Is Direct Chat free to use?</div>
+          <div class="faq-answer">Yes, Direct Chat is completely free to use with no hidden charges or in-app purchases.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need to root my device to use Direct Chat?</div>
+          <div class="faq-answer">No, Direct Chat works on non-rooted devices. You just need to grant the necessary permissions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I use Direct Chat to chat with someone who doesn't have WhatsApp?</div>
+          <div class="faq-answer">No, the direct chat feature works only with WhatsApp. The recipient must have WhatsApp installed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Will the person know if I save their status?</div>
+          <div class="faq-answer">No, saving someone's status is private. The person who posted the status won't be notified.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Product Page Styles */
+  .product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .product-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 2rem;
+  }
+
+  .tech-badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .tech-badge {
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* App Overview */
+  .app-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+  }
+
+  .overview-content h2 {
+    font-size: 2rem;
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--on-surface-variant);
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .primary-button, .secondary-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .primary-button {
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .secondary-button {
+    background-color: var(--surface-variant);
+    color: var(--on-surface-variant);
+  }
+
+  .primary-button:hover, .secondary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-1);
+  }
+
+  .phone-mockup {
+    background-color: #333;
+    border-radius: 36px;
+    padding: 8px;
+    box-shadow: var(--elevation-2);
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .phone-screen {
+    background-color: var(--surface);
+    border-radius: 30px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .app-preview {
+    text-align: center;
+  }
+
+  .app-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+
+  .app-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* Features Section */
+  .features-section {
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  .features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--elevation-1);
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--elevation-2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--on-surface);
+  }
+
+  .feature-card p {
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+  }
+
+  /* Screenshots Section */
+  .screenshots-section {
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  .screenshots-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .screenshots-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .screenshots-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .screenshot {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+  }
+
+  .screenshot-mockup {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--elevation-1);
+  }
+
+  .screenshot-label {
+    font-size: 1.2rem;
+    color: #888;
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .carousel-control {
+    background-color: var(--surface-variant);
+    color: var(--on-surface-variant);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-control:hover {
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+  }
+
+  .carousel-indicators {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--surface-variant);
+    cursor: pointer;
+  }
+
+  .indicator.active {
+    background-color: var(--primary);
+  }
+
+  /* How to Use Section */
+  .how-to-use-section {
+    margin: 4rem 0;
+  }
+
+  .how-to-use-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+.usage-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+  .usage-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .step {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--elevation-1);
+    position: relative;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .step h3 {
+    margin-bottom: 1.5rem;
+    color: var(--on-surface);
+  }
+
+  .step ul {
+    padding-left: 1.5rem;
+    color: var(--on-surface-variant);
+  }
+
+  .step li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .usage-tips {
+  background: #e3f2fd;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.usage-tips h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.tip {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  /* Download Section */
+  .download-section {
+    margin: 4rem 0;
+    text-align: center;
+    background-color: var(--primary-container);
+    padding: 3rem;
+    border-radius: 24px;
+  }
+
+  .download-section h2 {
+    font-size: 2rem;
+    color: var(--on-primary-container);
+    margin-bottom: 1rem;
+  }
+
+  .download-description {
+    color: var(--on-primary-container);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .download-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .download-button {
+    display: flex;
+    align-items: center;
+      padding: 12px 20px;
+    margin: 10px;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--elevation-2);
+  }
+
+  .download-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .download-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .download-label {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .version {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .requirements {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .requirements h3 {
+    margin-bottom: 1rem;
+    color: var(--on-surface);
+  }
+
+  .requirements ul {
+    text-align: left;
+    padding-left: 1.5rem;
+    color: var(--on-surface-variant);
+  }
+
+  .requirements li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    margin: 4rem 0;
+  }
+
+  .faq-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--surface-variant);
+    padding-bottom: 1.5rem;
+  }
+
+  .faq-question {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--on-surface);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+  }
+
+  .faq-answer {
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+  }
+
+  /* Animation Classes */
+  .animate-up {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-up-delay-1 {
+    animation: fadeInUp 0.6s 0.2s ease forwards;
+    opacity: 0;
+  }
+
+  .animate-up-delay-2 {
+    animation: fadeInUp 0.6s 0.4s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .app-overview {
+      grid-template-columns: 1fr;
+    }
+
+    .overview-image {
+      order: -1;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .usage-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .phone-mockup {
+      max-width: 220px;
+    }
+
+    .phone-screen {
+      height: 400px;
+    }
+
+    .screenshot-mockup {
+      height: 400px;
+    }
+  }
+</style>
+
+<script>
+  // Simple carousel functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.screenshots-carousel');
+    const screenshots = document.querySelectorAll('.screenshot');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const scrollPosition = currentIndex * (screenshots[0].offsetWidth + 32); // width + gap
+      carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    // Event listeners for controls
+    prevBtn.addEventListener('click', () => {
+      currentIndex = Math.max(0, currentIndex - 1);
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = Math.min(screenshots.length - 1, currentIndex + 1);
+      updateCarousel();
+    });
+
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+
+    // FAQ toggle functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isOpen = answer.style.display === 'block';
+        
+        answer.style.display = isOpen ? 'none' : 'block';
+        question.style.fontWeight = isOpen ? '700' : '700';
+        question.style.color = isOpen ? 'var(--on-surface)' : 'var(--primary)';
+        question.style.setProperty('--after-content', isOpen ? '+' : '-');
+      });
+    });
+  });
+</script>

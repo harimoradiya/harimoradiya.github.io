@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="privacy-policy-container">
+        <h1>Privacy Policy</h1>
+        <div class="last-updated">Last Updated: October 1, 2025</div>
+        
+        <section class="policy-section">
+            <h2>Introduction</h2>
+            <p>I am Hari Moradiya("Hari Moradiya" or "I")  
+                committed to protecting your privacy. This Privacy Policy explains how we collect and use your information through our mobile applications ("Apps").</p>
+        </section>
+
+        <section class="policy-section">
+            <h2>Data Privacy</h2>
+            <p>We do not store or share any of the content you create with our Apps. We understand that the content you create using our App is personal to
+                you and we are committed to protecting your content and privacy.</p>
+
+        </section>
+
+        <section class="policy-section">
+            <h2>User Privacy</h2>
+            <p>We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. We do not collect or distribute any personal information (like name, address, debit or credit card, or any bank information) through our Apps. That means we do not collect 
+                any kind of information transmitted through our network.</p>
+        
+        </section>
+
+        <section class="policy-section">
+            <h2>Children Privacy</h2>
+            <p>You must be 4+ years of age or older to use the Apps. We do not knowingly collect personal information from children under the age of 4. If you are a parent or guardian and you become aware that your child has provided us with personal information, please contact us immediately.</p>
+        </section>
+
+          <section class="policy-section">
+            <h2>Advertising SDK</h2>
+            <p>We use Google AdMob SDK and Facebook advertising SDK to show advertisements in the Apps. These SDKs may collect and use information about your device, such as your IP address, device identifier, and advertising identifier. Please refer to the respective privacy policies of Google and Facebook for more information.</p>
+        </section>
+
+          <section class="policy-section">
+            <h2>App's Content Storage</h2>
+            <p>We use the Firebase of Google to store the contents of the App. We may update the contents on a regular basis from server storage. We do not collect or store any personal information in the content storage.</p>
+        </section>
+
+          <section class="policy-section">
+            <h2>Information we automatically collect</h2>
+            <p>Device Information: We may collect information about your mobile device, including its model, operating system type and version, unique identifiers, language, mobile network information, and the Internet Protocol (IP) address through which you accessed the Service.</p>
+        </section>
+
+          <section class="policy-section">
+            <h2>Analytical Data</h2>
+            <p>We may use third-party analytics tools, such as Firebase by Google for A/B testing, Crashlytics & Answers by Fabric for capturing crash reports and retention tracking. For example, we may record the frequency and scope of your use of the Service, the duration of your sessions, the interactions you make with the Serviceʼs interface, etc.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Customer Support</h2>
+            <p>When you request customer support, we ask for your email address and other contact information, so that we can get back to you with our response regarding your feedback. We may also collect information regarding your support request to assist us in resolving your issue. We also collect information regarding your support request. You can contact us with any questions or comments directly at: harimoradiya123@gmail.com</p>
+        </section>
+        <section class="policy-section">
+            <h2>Third-Party Services</h2>
+            <p>Please note that we are not responsible for the privacy practices of these third-party services, and you should review their privacy policies separately.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Changes to this Privacy Policy</h2>
+            <p>We reserve the right to update or modify this Privacy Policy at any time. Your continued use of the Apps after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy. We may update this Privacy Policy from time to time. If we make any material changes to this Privacy Policy, we will notify you by posting the new Privacy Policy. We encourage you to review this Privacy Policy periodically for any updates or changes.</p>
+        </section>
+       
+
+        <section class="policy-section">
+            <h2>Contact Information</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <div class="contact-info">
+                <p>Email: harimoradiya123@gmail.com</p>
+            </div>
+            <p>We take the privacy of our users seriously and are committed to protecting your personal information. Thank you for using our App.</p>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .privacy-policy-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        color: var(--on-surface);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+    }
+
+    .last-updated {
+        color: var(--on-surface-variant);
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .policy-section {
+        margin: 2.5rem 0;
+        padding: 1.5rem;
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: var(--elevation-1);
+    }
+
+    .policy-section:hover {
+        box-shadow: var(--elevation-2);
+        transition: box-shadow 0.3s ease;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    .contact-info {
+        background: var(--primary-container);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .contact-info p {
+        color: var(--on-primary-container);
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .privacy-policy-container {
+            margin: 1rem auto;
+        }
+
+        .policy-section {
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+</style>

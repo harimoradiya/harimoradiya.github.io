@@ -12,7 +12,7 @@ const skills = [
 const experiences = [
    
     {
-        title: "Android Developer",
+        title: "Android Developer - Part time",
         company: "Vasuka",
         period: "2022 - 2024",
         description: "Developed and maintained multiple Android applications using Kotlin and Java."
@@ -20,12 +20,33 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    title: "Direct Chat",
+    category: "Android & IOS ",
+    excerpt: "An application to save statuses from social media platforms.",
+    techStack: "Android, Kotlin",
+    url: "/"
+  },
+  {
+    title: "WiFi Mouse Remote",
+    category: "Android",
+    excerpt: "Control your computer wirelessly from your Android device",
+    techStack: "Android, Java, Socket Programming",
+    url: "/wifi-mouse"
+  },
+   {
+    title: "Wifi Mouse Controller",
+    category: "Android App & Desktop App",
+    excerpt: "About Kotlin Multiplatform WiFi Mouse Server that allows remote mouse and keyboard control from an Android device over Wi-Fi. Provides real-time device info, server IP/port display, and requires accessibility permission for full control.",
+    techStack: "Android, Kotlin, Java, Sockets, Multiplatform",
+    url: "https://github.com/harimoradiya/WiFi-Mouse-Server"
+  },
    {
     title: "StatusSaver",
     category: "Android App",
     excerpt: "An application to save statuses from social media platforms.",
     techStack: "Android, Kotlin",
-    url: "https://github.com/harimoradiya/StatusSaver"
+    url: "/direct-chat"
   },
   {
     title: "Background-Remover-App",
@@ -129,7 +150,7 @@ const socialLinks = [
   <h2 class="section-title">Projects</h2>
   <div class="post-grid">
     {projects.map((project, index) => (
-      <a href={project.url} target="_blank" rel="noopener noreferrer" class="post-card animate-up" style={`--delay: ${index * 0.2}s`}>
+      <a href={project.url} class="post-card animate-up" style={`--delay: ${index * 0.2}s`}>
         <div class="post-content">
           <p class="post-category">{project.category}</p>
           <h3 class="post-title">{project.title}</h3>
