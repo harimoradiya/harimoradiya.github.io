@@ -1,0 +1,443 @@
+---
+// src/pages/android-tv-remote.astro
+import Layout from '../layouts/Layout.astro';
+import a1 from '../assets/a1.png';
+import a2 from '../assets/a2.png';
+import a3 from '../assets/a3.png';
+import a4 from '../assets/a4.png';
+import a5 from '../assets/a5.png';
+import a6 from '../assets/a6.png';
+---
+
+<Layout>
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">iOS Remote Control</span>
+        <h1>Android TV Remote</h1>
+        <p>Control your Android TV from your iPhone. Fast, secure, and beautifully designed.</p>
+        <div class="cta-group">
+          <a href="#features" class="btn btn-primary">Explore</a>
+          <a href="#download" class="btn btn-secondary">Download</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card">
+          <div class="card-icon">🎮</div>
+          <span>D-Pad Control</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="features">
+      <h2>Everything You Need</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>D-Pad Control</h3>
+          <p>Intuitive directional navigation with responsive touch feedback</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎬</div>
+          <h3>Media Control</h3>
+          <p>Play, pause, next, previous with dedicated buttons</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔍</div>
+          <h3>App Launcher</h3>
+          <p>Quick access to your favorite streaming apps</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⌨️</div>
+          <h3>Keyboard</h3>
+          <p>Full QWERTY keyboard for text input</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎙️</div>
+          <h3>Voice Control</h3>
+          <p>Control your TV with voice commands</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Ultra Fast</h3>
+          <p>Zero-lag connection with instant response</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2>App Preview</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src={a1.src} alt="Screenshot 1" />
+        </div>
+        <div class="gallery-item">
+          <img src={a2.src} alt="Screenshot 2" />
+        </div>
+        <div class="gallery-item">
+          <img src={a3.src} alt="Screenshot 3" />
+        </div>
+        <div class="gallery-item">
+          <img src={a4.src} alt="Screenshot 4" />
+        </div>
+        <div class="gallery-item">
+          <img src={a5.src} alt="Screenshot 5" />
+        </div>
+        <div class="gallery-item">
+          <img src={a6.src} alt="Screenshot 6" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack">
+      <h3>Built With</h3>
+      <div class="tech-items">
+        <span>Flutter</span>
+        <span>iOS</span>
+        <span>Dart</span>
+        <span>Material Design 3</span>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="download" class="cta-section">
+      <h2>Ready to Control?</h2>
+      <p>Get the app on App Store today</p>
+      <a href="#" class="btn btn-primary">Download on App Store</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--on-surface);
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-container);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .floating-card {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .card-icon {
+    font-size: 3rem;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Features Section */
+  .features {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .features h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: var(--on-surface);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .feature:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--on-surface);
+  }
+
+  .feature p {
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Gallery */
+  .gallery {
+    padding: 6rem 0;
+  }
+
+  .gallery h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--on-surface);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Tech Stack */
+  .tech-stack {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tech-stack h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .tech-items span {
+    padding: 0.5rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--on-surface);
+  }
+
+  .cta-section p {
+    font-size: 1.25rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      min-height: auto;
+      padding: 3rem 0;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .cta-group {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .features h2,
+    .gallery h2,
+    .cta-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-items {
+      gap: 0.5rem;
+    }
+
+    .tech-items span {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>
