@@ -102,6 +102,15 @@ const socialLinks = [
 ---
 
 <Layout>
+  <section class="about-us-top">
+    <p class="about-us-label">About Us</p>
+    <h2>Harikrushn Devjibhai Moradiya</h2>
+    <p>
+      I build user-focused mobile apps and backend systems with a strong focus on reliability, performance, and clear product experience.
+    </p>
+    <a href="/about" class="about-us-link">Read Full About Us</a>
+  </section>
+
   <div class="hero-section">
     <div class="profile-card">
       <div class="profile-image">HM</div>
@@ -180,6 +189,44 @@ const socialLinks = [
       </section>
 
   <style>
+    .about-us-top {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-us-label {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-us-top h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--on-surface);
+    }
+
+    .about-us-top p {
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+    }
+
+    .about-us-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: var(--on-primary);
+      background: var(--primary);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
     /* Hero Section */
     .hero-section {
       min-height: 60vh;
