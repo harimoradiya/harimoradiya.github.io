@@ -19,33 +19,41 @@ const { title, subtitle } = Astro.props;
 
 <style>
   .section-card {
-    background: color-mix(in srgb, var(--surface) 72%, transparent);
-    border: 1px solid color-mix(in srgb, var(--outline) 45%, transparent);
-    border-radius: 20px;
-    padding: 1.5rem;
-    backdrop-filter: blur(12px);
-    box-shadow: var(--elevation-1);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    background: var(--bg-surface-glass);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
   }
 
   .section-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--elevation-2);
-    border-color: color-mix(in srgb, var(--primary) 35%, var(--outline));
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
   }
 
   .section-head h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.4rem;
-    color: var(--on-surface);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
   }
 
   .section-head p {
-    color: var(--on-surface-variant);
-    line-height: 1.55;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .section-body {
     margin-top: 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.975rem;
+    line-height: 1.6;
   }
 </style>
