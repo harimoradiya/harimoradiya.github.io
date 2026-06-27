@@ -1,0 +1,1049 @@
+---
+// src/pages/tv-remote-android.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="product-page">
+    <!-- Hero & Interactive Mockup Section -->
+    <section class="hero-split">
+      <div class="hero-info">
+        <span class="product-badge">Android Application</span>
+        <h1 class="product-title">TV Remote for <span class="gradient-text">Android TV</span></h1>
+        <p class="product-description">
+          A clean, privacy-respecting, and fully open-source remote control for Android TV and Google TV devices. Built natively to provide zero-latency control without trackers, ads, or paywalls.
+        </p>
+
+        <!-- Product Badges Grid -->
+        <div class="attributes-pills">
+          <span class="pill-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Open Source
+          </span>
+          <span class="pill-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+            </svg>
+            No Ads
+          </span>
+          <span class="pill-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            No Premium
+          </span>
+          <span class="pill-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12h8"></path>
+            </svg>
+            100% Free
+          </span>
+        </div>
+
+        <div class="cta-actions">
+          <a href="https://play.google.com/store/apps/details?id=com.hari.androidtvremote" target="_blank" rel="noopener noreferrer" class="btn-modern btn-modern-primary">
+            <!-- Google Play Icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/>
+            </svg>
+            <span>Get on Play Store</span>
+          </a>
+          <a href="https://github.com/harimoradiya/TV-Remote-for-Android-TV" target="_blank" rel="noopener noreferrer" class="btn-modern btn-modern-secondary">
+            <!-- GitHub Icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            <span>View Source Code</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Remote Controller Mockup -->
+      <div class="interactive-sandbox">
+        <!-- Virtual TV Screen -->
+        <div class="virtual-tv">
+          <div class="tv-bezel">
+            <div class="tv-screen" id="tv-screen">
+              <div class="tv-inner-content">
+                <span class="tv-time">10:00 AM</span>
+                <div class="tv-status" id="tv-status">TV Ready</div>
+                <div class="tv-apps">
+                  <div class="tv-app-icon active-app" id="app-youtube">YouTube</div>
+                  <div class="tv-app-icon" id="app-netflix">Netflix</div>
+                  <div class="tv-app-icon" id="app-prime">Prime Video</div>
+                </div>
+                <div class="tv-volume-overlay" id="volume-overlay">
+                  <span class="vol-icon">🔊</span>
+                  <div class="vol-bar"><div class="vol-fill" id="volume-fill" style="width: 50%;"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="tv-indicator"></div>
+          </div>
+          <div class="tv-stand"></div>
+        </div>
+
+        <!-- Phone Remote Mockup -->
+        <div class="phone-remote-container">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="remote-app">
+                <div class="remote-header">
+                  <span class="remote-title">Android TV Remote</span>
+                  <div class="remote-status-led connected"></div>
+                </div>
+
+                <!-- D-pad Controls -->
+                <div class="dpad-container">
+                  <button class="dpad-btn dpad-up" data-command="UP" aria-label="Up">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  </button>
+                  <div class="dpad-middle-row">
+                    <button class="dpad-btn dpad-left" data-command="LEFT" aria-label="Left">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="dpad-center-btn" data-command="SELECT" aria-label="Select">OK</button>
+                    <button class="dpad-btn dpad-right" data-command="RIGHT" aria-label="Right">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  </div>
+                  <button class="dpad-btn dpad-down" data-command="DOWN" aria-label="Down">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="button-grid">
+                  <button class="remote-btn" data-command="BACK" aria-label="Back">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="19" y1="12" x2="5" y2="12"></line>
+                      <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>BACK</span>
+                  </button>
+                  <button class="remote-btn btn-danger" data-command="POWER" aria-label="Power">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                      <line x1="12" y1="2" x2="12" y2="12"></line>
+                    </svg>
+                    <span>POWER</span>
+                  </button>
+                  <button class="remote-btn" data-command="HOME" aria-label="Home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>HOME</span>
+                  </button>
+                </div>
+
+                <!-- Volume & Media Controls -->
+                <div class="audio-controls">
+                  <button class="audio-btn" data-command="VOL_DOWN" aria-label="Volume Down">VOL -</button>
+                  <button class="audio-btn btn-mute" data-command="MUTE" aria-label="Mute">MUTE</button>
+                  <button class="audio-btn" data-command="VOL_UP" aria-label="Volume Up">VOL +</button>
+                </div>
+
+                <p class="remote-mockup-hint">Click remote buttons to control the virtual TV screen above.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Open Source? -->
+    <section class="info-section">
+      <div class="section-header">
+        <span class="eyebrow">Privacy & Freedom</span>
+        <h2 class="section-title">Why Open Source Matters</h2>
+        <p class="section-desc">Many TV remote applications on the app store are filled with intrusive ads, tracking, and subscription fees. We believe in providing a direct, auditable utility app.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🛡️</div>
+          <h3>Privacy Audited</h3>
+          <p>Every line of code is open to the public on GitHub. We never collect user keystrokes, network data, or TV usage logs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">⚡</div>
+          <h3>Zero Advertisements</h3>
+          <p>No popups, banner ads, or load screens. The app loads instantly and connects within milliseconds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">💎</div>
+          <h3>No Paywalls</h3>
+          <p>Features like Keyboard typing, Quick App launchers, and custom D-pads are unlocked completely for free, forever.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="features-showcase">
+      <div class="section-header">
+        <span class="eyebrow">Highlights</span>
+        <h2 class="section-title">Designed for Seamless Interaction</h2>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <h4>📱 Native Android Architecture</h4>
+          <p>Built with Jetpack Compose, Kotlin Coroutines, and Flow, ensuring optimal power efficiency and a beautiful Material You user interface that inherits your device's accent colors.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>📡 Auto Network Discovery</h4>
+          <p>Finds your Android TV or Google TV automatically using Network Service Discovery (NSD). Just open the app, tap your TV, and start controlling.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>⌨️ Instant Text Input</h4>
+          <p>Tired of navigating the TV keyboard letter by letter? Use your phone's native keyboard to type movie names, URLs, and search queries instantly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="setup-section">
+      <div class="setup-card">
+        <h2>Simple 3-Step Setup</h2>
+        <div class="steps-grid">
+          <div class="step-col">
+            <span class="step-num">1</span>
+            <h4>Connect WiFi</h4>
+            <p>Ensure both your Android smartphone and your Android/Google TV are connected to the same local WiFi network.</p>
+          </div>
+          <div class="step-col">
+            <span class="step-num">2</span>
+            <h4>Auto Pair</h4>
+            <p>Launch the application. It will scan your network and display your TV name. Select it to initiate pairing.</p>
+          </div>
+          <div class="step-col">
+            <span class="step-num">3</span>
+            <h4>Input Code</h4>
+            <p>Enter the 4-digit pairing PIN shown on your TV screen into the phone application. Connection is secure and saved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .product-page {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding-top: 1rem;
+    }
+
+    /* Hero Layout */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      min-height: 80vh;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .product-badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .product-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #4f46e5 20%, #8b5cf6 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .product-description {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .attributes-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.5rem 0;
+    }
+
+    .pill-badge {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 99px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pill-badge svg {
+      color: var(--primary);
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* Sandbox - Simulated TV & Phone Remote */
+    .interactive-sandbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+    }
+
+    /* Virtual TV Styles */
+    .virtual-tv {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      perspective: 1000px;
+    }
+
+    .tv-bezel {
+      width: 100%;
+      background: #111827;
+      border-radius: 12px;
+      padding: 10px 10px 22px 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+      border: 2px solid #374151;
+      transform: rotateX(5deg);
+    }
+
+    .tv-screen {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1e1b4b; /* deep violet background */
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #000;
+      transition: background 0.5s ease;
+    }
+
+    .tv-screen.tv-off {
+      background: #020617 !important;
+    }
+
+    .tv-inner-content {
+      padding: 1rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+      font-family: var(--font-sans);
+      transition: opacity 0.3s ease;
+    }
+
+    .tv-off .tv-inner-content {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .tv-time {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .tv-status {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      margin: auto 0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .tv-apps {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .tv-app-icon {
+      padding: 0.35rem 0.75rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .tv-app-icon.active-app {
+      background: #4f46e5;
+      border-color: #818cf8;
+      box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+    }
+
+    .tv-volume-overlay {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 5;
+    }
+
+    .tv-volume-overlay.show-vol {
+      opacity: 1;
+    }
+
+    .vol-icon {
+      font-size: 0.875rem;
+    }
+
+    .vol-bar {
+      width: 80px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .vol-fill {
+      height: 100%;
+      background: #34d399;
+      transition: width 0.1s ease;
+    }
+
+    .tv-indicator {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: #ef4444; /* red when off, changes in JS */
+      border-radius: 50%;
+      box-shadow: 0 0 5px #ef4444;
+      transition: all 0.3s ease;
+    }
+
+    .tv-indicator.tv-on {
+      background: #10b981;
+      box-shadow: 0 0 5px #10b981;
+    }
+
+    .tv-stand {
+      width: 100px;
+      height: 12px;
+      background: #374151;
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Phone Remote Mockup */
+    .phone-remote-container {
+      width: 100%;
+      max-width: 280px;
+      margin-top: -1rem;
+    }
+
+    .phone-frame {
+      background: #1f2937;
+      border-radius: 36px;
+      padding: 10px;
+      border: 3px solid #374151;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .phone-screen {
+      background: var(--bg-surface);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .remote-app {
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      user-select: none;
+    }
+
+    .remote-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remote-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .remote-status-led {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #64748b;
+      transition: background 0.3s ease;
+    }
+
+    .remote-status-led.connected {
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    .remote-status-led.tv-off {
+      background: #ef4444;
+      box-shadow: 0 0 6px #ef4444;
+    }
+
+    /* D-pad button layout */
+    .dpad-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      margin: 0.25rem 0;
+    }
+
+    .dpad-middle-row {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .dpad-btn {
+      width: 54px;
+      height: 54px;
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .dpad-btn:hover {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .dpad-btn:active {
+      transform: scale(0.92);
+    }
+
+    .dpad-center-btn {
+      width: 58px;
+      height: 58px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
+    }
+
+    .dpad-center-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: var(--shadow-md);
+      transform: scale(1.03);
+    }
+
+    .dpad-center-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* Button Grid navigation styles */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .remote-btn {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.65rem 0.25rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-secondary);
+      font-size: 0.6rem;
+      font-weight: 700;
+      transition: all 0.15s ease;
+    }
+
+    .remote-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-glow);
+    }
+
+    .remote-btn:active {
+      transform: scale(0.92);
+    }
+
+    .btn-danger {
+      color: #ef4444;
+    }
+    .btn-danger:hover {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+
+    /* Volume media buttons */
+    .audio-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .audio-btn {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .audio-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-glow);
+    }
+
+    .audio-btn:active {
+      transform: scale(0.92);
+    }
+
+    .btn-mute {
+      color: var(--text-muted);
+    }
+
+    .remote-mockup-hint {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 0.5rem;
+    }
+
+    /* Info Sections and features grid */
+    .info-section, .features-showcase {
+      padding: 4rem 0 1rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-icon-wrapper {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Highlights Section */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Setup Guide Section */
+    .setup-section {
+      padding: 3rem 0;
+    }
+
+    .setup-card {
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-base));
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 3.5rem 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .setup-card h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--text-primary);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .step-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+    }
+
+    .step-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-col p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .hero-info {
+        align-items: center;
+      }
+
+      .attributes-pills {
+        justify-content: center;
+      }
+
+      .cta-actions {
+        justify-content: center;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+
+  <!-- Interactive script to control mockup TV screen -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tvScreen = document.getElementById('tv-screen');
+      const tvStatus = document.getElementById('tv-status');
+      const ledIndicator = document.querySelector('.tv-indicator');
+      const remoteLed = document.querySelector('.remote-status-led');
+      const volumeOverlay = document.getElementById('volume-overlay');
+      const volumeFill = document.getElementById('volume-fill');
+      
+      const apps = ['youtube', 'netflix', 'prime'];
+      let currentAppIndex = 0;
+      let isTvOn = true;
+      let volume = 50; // default volume percent
+      let volumeTimeout: any = null;
+
+      // Make indicator reflect TV on state
+      ledIndicator?.classList.add('tv-on');
+
+      // Add click listeners to remote control buttons
+      const buttons = document.querySelectorAll('.phone-remote-container button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const command = btn.getAttribute('data-command');
+          if (!command) return;
+
+          // Haptic feedback animation
+          btn.classList.add('btn-pressed');
+          setTimeout(() => btn.classList.remove('btn-pressed'), 150);
+
+          if (command === 'POWER') {
+            isTvOn = !isTvOn;
+            if (isTvOn) {
+              tvScreen?.classList.remove('tv-off');
+              ledIndicator?.classList.add('tv-on');
+              ledIndicator?.classList.remove('tv-off');
+              remoteLed?.classList.add('connected');
+              remoteLed?.classList.remove('tv-off');
+              if (tvStatus) tvStatus.textContent = 'TV Ready';
+            } else {
+              tvScreen?.classList.add('tv-off');
+              ledIndicator?.classList.remove('tv-on');
+              ledIndicator?.classList.add('tv-off');
+              remoteLed?.classList.remove('connected');
+              remoteLed?.classList.add('tv-off');
+            }
+            return;
+          }
+
+          // If TV is off, remote actions do nothing
+          if (!isTvOn) return;
+
+          // Process commands
+          switch(command) {
+            case 'UP':
+              changeAppSelection(-1);
+              break;
+            case 'DOWN':
+              changeAppSelection(1);
+              break;
+            case 'LEFT':
+              changeAppSelection(-1);
+              break;
+            case 'RIGHT':
+              changeAppSelection(1);
+              break;
+            case 'SELECT':
+              launchSelectedApp();
+              break;
+            case 'BACK':
+              if (tvStatus) tvStatus.textContent = 'TV Home Menu';
+              break;
+            case 'HOME':
+              if (tvStatus) tvStatus.textContent = 'Android TV Home';
+              resetAppSelection();
+              break;
+            case 'VOL_UP':
+              adjustVolume(5);
+              break;
+            case 'VOL_DOWN':
+              adjustVolume(-5);
+              break;
+            case 'MUTE':
+              toggleMute();
+              break;
+          }
+        });
+      });
+
+      function changeAppSelection(direction: number) {
+        // Remove active class from old app
+        const currentAppId = `app-${apps[currentAppIndex]}`;
+        document.getElementById(currentAppId)?.classList.remove('active-app');
+
+        // Calculate new index
+        currentAppIndex = (currentAppIndex + direction + apps.length) % apps.length;
+
+        // Add active class to new app
+        const nextAppId = `app-${apps[currentAppIndex]}`;
+        document.getElementById(nextAppId)?.classList.add('active-app');
+
+        if (tvStatus) {
+          const appName = apps[currentAppIndex].charAt(0).toUpperCase() + apps[currentAppIndex].slice(1);
+          tvStatus.textContent = `Select ${appName}`;
+        }
+      }
+
+      function launchSelectedApp() {
+        const appName = apps[currentAppIndex].charAt(0).toUpperCase() + apps[currentAppIndex].slice(1);
+        if (tvStatus) {
+          tvStatus.textContent = `Opening ${appName}...`;
+        }
+      }
+
+      function resetAppSelection() {
+        // Reset YouTube as default
+        apps.forEach(app => {
+          document.getElementById(`app-${app}`)?.classList.remove('active-app');
+        });
+        currentAppIndex = 0;
+        document.getElementById(`app-youtube`)?.classList.add('active-app');
+      }
+
+      function adjustVolume(change: number) {
+        volume = Math.max(0, Math.min(100, volume + change));
+        
+        if (volumeFill) {
+          volumeFill.style.width = `${volume}%`;
+        }
+
+        // Show volume overlay
+        volumeOverlay?.classList.add('show-vol');
+
+        // Clear existing timeout
+        if (volumeTimeout) clearTimeout(volumeTimeout);
+
+        // Hide overlay after 1.5 seconds
+        volumeTimeout = setTimeout(() => {
+          volumeOverlay?.classList.remove('show-vol');
+        }, 1500);
+
+        if (tvStatus) {
+          tvStatus.textContent = `Volume: ${volume}%`;
+        }
+      }
+
+      let isMuted = false;
+      let prevVolume = 50;
+
+      function toggleMute() {
+        if (isMuted) {
+          volume = prevVolume;
+          isMuted = false;
+          adjustVolume(0);
+        } else {
+          prevVolume = volume;
+          volume = 0;
+          isMuted = true;
+          adjustVolume(0);
+          if (tvStatus) {
+            tvStatus.textContent = `TV Muted`;
+          }
+        }
+      }
+    });
+  </script>
+</Layout>

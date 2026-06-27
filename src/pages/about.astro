@@ -1,4 +1,5 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
 import SectionCard from '../components/about/SectionCard.astro';
 
@@ -6,7 +7,7 @@ const highlights = [
   { label: 'Years Building', value: '4+' },
   { label: 'Products Delivered', value: '20+' },
   { label: 'Cross-Platform Releases', value: '10+' },
-  { label: 'Avg App Rating Focus', value: '4.8/5' },
+  { label: 'Avg Rating Focus', value: '4.8/5' },
 ];
 
 const services = [
@@ -35,29 +36,27 @@ const journey = [
 ];
 
 const projects = [
-  { name: 'Android TV Remote', impact: 'iOS remote experience with smooth media and D-pad workflows.' },
-  { name: 'WiFi Mouse Remote', impact: 'Connected mobile and desktop control with low-latency input.' },
-  { name: 'RMS API', impact: 'Scalable restaurant backend APIs with Kotlin and PostgreSQL.' },
+  { name: 'Android TV Remote', impact: 'Tactile iOS remote control experience built with Flutter.' },
+  { name: 'WiFi Mouse Remote', impact: 'Low-latency computer control client built using Compose Multiplatform.' },
+  { name: 'RMS API', impact: 'High-performance restaurant APIs engineered with Kotlin, Ktor, and Docker.' },
 ];
 ---
 
 <Layout>
   <div class="about-page">
-    <section class="hero">
-      <div class="hero-panel">
-        <p class="eyebrow">About Us</p>
-        <h1>Harikrushn Devjibhai Moradiya</h1>
-        <p class="lead">
-          Software engineer focused on premium mobile and backend experiences. I build reliable, elegant products that feel fast, clear, and production-ready.
+    <!-- Hero Header -->
+    <section class="about-hero">
+      <div class="hero-glass-card">
+        <span class="eyebrow">Profile</span>
+        <h1 class="about-title">Harikrushn Devjibhai <span class="gradient-text">Moradiya</span></h1>
+        <p class="about-lead">
+          I am a software engineer focused on building premium mobile and backend product experiences. I design reliable, elegant applications that are fast, secure, and production-ready.
         </p>
-        <div class="hero-actions">
-          <a href="#mission" class="btn-primary">Mission and Vision</a>
-          <a href="#journey" class="btn-secondary">View Journey</a>
-        </div>
       </div>
     </section>
 
-    <section class="grid stats-grid" aria-label="Achievements">
+    <!-- Stats Grid -->
+    <section class="stats-grid" aria-label="Achievements">
       {highlights.map((item) => (
         <article class="stat-card">
           <p class="stat-value">{item.value}</p>
@@ -66,301 +65,388 @@ const projects = [
       ))}
     </section>
 
-    <section class="grid two-col">
+    <!-- Core Grid Sections -->
+    <div class="about-sections-grid">
       <SectionCard title="Story" subtitle="Built with ownership, clarity, and consistency.">
-        <p>
-          My legal name is Harikrushn Devjibhai Moradiya. I started by building Android apps, then moved into full product delivery including iOS-ready workflows and backend systems. Every release is shaped around user trust, performance, and long-term maintainability.
+        <p class="paragraph-spacing">
+          I specialize in mobile app engineering and full product delivery, including robust backend services and cross-platform mobile clients. My development mindset centers around user trust, app speed, and clean code principles.
         </p>
       </SectionCard>
-      <SectionCard title="Experience Highlights" subtitle="Core areas where I consistently deliver impact.">
-        <ul class="clean-list">
-          <li>Production app delivery with Kotlin, Flutter, and modern UI architecture.</li>
-          <li>Backend API implementation with Ktor, PostgreSQL, and robust integration patterns.</li>
-          <li>Bug reduction and release quality improvements through focused engineering practices.</li>
+
+      <SectionCard title="Experience Highlights" subtitle="Core areas where I consistently deliver value.">
+        <ul class="highlights-list">
+          <li>Production-ready app delivery using Kotlin, Flutter, and Material You design standards.</li>
+          <li>Backend REST-API engineering utilizing Kotlin Ktor, PostgreSQL, and scalable Docker setups.</li>
+          <li>Continuous integration, code quality, and device testing workflows.</li>
         </ul>
       </SectionCard>
-    </section>
 
-    <section id="mission" class="grid two-col">
       <SectionCard title="Mission">
         <p>
-          Deliver software that is simple to use, stable at scale, and pleasant to interact with across devices.
+          Deliver software utilities that are highly responsive, simple to navigate, stable under load, and visually delightful across all platforms.
         </p>
       </SectionCard>
+
       <SectionCard title="Vision">
         <p>
-          Build trusted digital products where design quality and engineering reliability are equally strong.
+          Establish premium digital products where design quality, user privacy, and engineering reliability are equally prioritized.
         </p>
       </SectionCard>
-    </section>
 
-    <section class="grid two-col">
-      <SectionCard title="Skills and Services">
-        <div class="chip-grid">
-          {services.map((service) => <span class="chip">{service}</span>)}
+      <SectionCard title="Services & Expertise">
+        <div class="chips-container">
+          {services.map((service) => <span class="chip-item">{service}</span>)}
         </div>
       </SectionCard>
-      <SectionCard title="Tech Stack">
-        <div class="chip-grid">
-          {techStack.map((tech) => <span class="chip">{tech}</span>)}
+
+      <SectionCard title="Core Tech Stack">
+        <div class="chips-container">
+          {techStack.map((tech) => <span class="chip-item accent-chip">{tech}</span>)}
         </div>
       </SectionCard>
-    </section>
+    </div>
 
-    <section id="journey">
-      <SectionCard title="Journey Timeline">
-        <div class="timeline">
+    <!-- Timeline Journey -->
+    <section class="journey-section">
+      <SectionCard title="Journey Timeline" subtitle="My professional trajectory.">
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
           {journey.map((step) => (
-            <div class="timeline-item">
-              <p class="timeline-year">{step.year}</p>
-              <p class="timeline-detail">{step.detail}</p>
+            <div class="timeline-node-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">{step.year}</span>
+                <p class="timeline-text">{step.detail}</p>
+              </div>
             </div>
           ))}
         </div>
       </SectionCard>
     </section>
 
-    <section>
-      <SectionCard title="Client and Project Highlights" subtitle="Selected outcomes from recent work.">
-        <div class="project-grid">
+    <!-- Project Highlights -->
+    <section class="about-projects">
+      <SectionCard title="Key Outcomes & Project Highlights" subtitle="Selected results from recent releases.">
+        <div class="projects-mini-grid">
           {projects.map((project) => (
-            <article class="project-card">
-              <h3>{project.name}</h3>
+            <div class="mini-project-card">
+              <h4>{project.name}</h4>
               <p>{project.impact}</p>
-            </article>
+            </div>
           ))}
         </div>
       </SectionCard>
     </section>
 
-    <section class="cta">
+    <!-- Call to Action Card -->
+    <section class="cta-bottom">
       <div class="cta-card">
-        <h2>Let’s Build Something Strong Together</h2>
+        <h2>Let's Build Something Premium Together</h2>
         <p>
-          If you are looking for a reliable engineer for mobile or backend product delivery, let’s connect and build your next release.
+          If you are looking for a reliable software engineer to deliver high-quality mobile apps or scalable backend systems, let's connect and build your next release.
         </p>
-        <a href="https://www.linkedin.com/in/hari-moradiya-0a7145179/" target="_blank" rel="noopener noreferrer" class="btn-primary">Start a Conversation</a>
+        <a href="https://www.linkedin.com/in/hari-moradiya-0a7145179/" target="_blank" rel="noopener noreferrer" class="btn-modern btn-modern-primary">
+          Start a Conversation
+        </a>
       </div>
     </section>
   </div>
 
   <style>
     .about-page {
-      display: grid;
-      gap: 1.5rem;
-      scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
     }
 
-    .hero {
-      background: linear-gradient(135deg, var(--primary-container), color-mix(in srgb, var(--surface-variant) 70%, var(--surface)));
-      border-radius: 24px;
-      padding: clamp(1.2rem, 2vw, 2.4rem);
-      border: 1px solid color-mix(in srgb, var(--outline) 45%, transparent);
+    /* Hero Section */
+    .about-hero {
+      padding-top: 1rem;
     }
 
-    .hero-panel {
-      background: color-mix(in srgb, var(--surface) 74%, transparent);
-      border: 1px solid color-mix(in srgb, var(--outline) 36%, transparent);
-      border-radius: 18px;
-      backdrop-filter: blur(12px);
-      padding: clamp(1.1rem, 2vw, 2.2rem);
+    .hero-glass-card {
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      border-radius: 32px;
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 32px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), transparent, rgba(168, 85, 247, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .eyebrow {
       font-size: 0.85rem;
-      color: var(--primary);
       font-weight: 700;
+      color: var(--primary);
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: block;
     }
 
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      margin-bottom: 0.9rem;
+    .about-title {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
     }
 
-    .lead {
-      color: var(--on-surface-variant);
+    .gradient-text {
+      background: linear-gradient(135deg, #4f46e5 30%, #8b5cf6 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .about-lead {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--text-secondary);
       line-height: 1.7;
       max-width: 800px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 0.65rem 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--on-primary);
-      box-shadow: var(--elevation-1);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--outline);
-      color: var(--on-surface);
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--elevation-2);
-    }
-
-    .grid {
-      display: grid;
-      gap: 1rem;
-    }
-
+    /* Stats Grid */
     .stats-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
     }
 
     .stat-card {
-      border-radius: 16px;
-      border: 1px solid color-mix(in srgb, var(--outline) 45%, transparent);
-      background: color-mix(in srgb, var(--surface) 78%, transparent);
-      padding: 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 1.75rem 1.25rem;
       text-align: center;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .stat-card:hover {
-      transform: translateY(-3px);
-      border-color: color-mix(in srgb, var(--primary) 35%, var(--outline));
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
     }
 
     .stat-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--on-surface);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
     }
 
     .stat-label {
-      margin-top: 0.2rem;
-      color: var(--on-surface-variant);
       font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 600;
     }
 
-    .two-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .clean-list {
-      padding-left: 1.15rem;
-      color: var(--on-surface-variant);
+    /* Core Sections Grid */
+    .about-sections-grid {
       display: grid;
-      gap: 0.5rem;
-      line-height: 1.6;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
     }
 
-    .chip-grid {
+    .paragraph-spacing {
+      margin-bottom: 1rem;
+    }
+
+    .highlights-list {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .highlights-list li {
+      line-height: 1.5;
+    }
+
+    .chips-container {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
     }
 
-    .chip {
-      border: 1px solid color-mix(in srgb, var(--outline) 40%, transparent);
-      background: color-mix(in srgb, var(--primary-container) 30%, var(--surface));
-      color: var(--on-surface);
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
+    .chip-item {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.45rem 1rem;
+      border-radius: 99px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.2s;
     }
 
-    .timeline {
-      display: grid;
-      gap: 0.9rem;
+    .chip-item.accent-chip {
+      background: var(--primary-glow);
+      color: var(--primary);
+      border-color: var(--primary);
     }
 
-    .timeline-item {
-      border-left: 3px solid var(--primary);
-      padding-left: 0.8rem;
+    /* Journey Timeline */
+    .journey-section {
+      width: 100%;
+    }
+
+    .timeline-wrapper {
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-node-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .timeline-node-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-bullet {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 4.5px solid var(--primary);
+      z-index: 2;
+    }
+
+    .timeline-content {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
     }
 
     .timeline-year {
-      color: var(--on-surface);
-      font-weight: 700;
-      margin-bottom: 0.25rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      min-width: 50px;
     }
 
-    .timeline-detail {
-      color: var(--on-surface-variant);
-      line-height: 1.6;
+    .timeline-text {
+      color: var(--text-secondary);
+      line-height: 1.5;
     }
 
-    .project-grid {
+    /* Projects mini grid */
+    .projects-mini-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 0.5rem;
     }
 
-    .project-card {
-      border: 1px solid color-mix(in srgb, var(--outline) 42%, transparent);
+    .mini-project-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
       border-radius: 14px;
-      padding: 1rem;
-      background: color-mix(in srgb, var(--surface) 75%, transparent);
+      padding: 1.5rem;
     }
 
-    .project-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.45rem;
+    .mini-project-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
     }
 
-    .project-card p {
-      color: var(--on-surface-variant);
-      line-height: 1.55;
-      font-size: 0.95rem;
+    .mini-project-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Call to Action */
+    .cta-bottom {
+      padding-top: 1rem;
     }
 
     .cta-card {
-      border-radius: 20px;
-      padding: clamp(1.2rem, 2vw, 2rem);
-      border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--outline));
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary-container) 50%, var(--surface)), var(--surface));
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-base));
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 3.5rem 2rem;
       text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
     }
 
     .cta-card h2 {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      margin-bottom: 0.75rem;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
     }
 
     .cta-card p {
-      color: var(--on-surface-variant);
-      max-width: 720px;
-      margin: 0 auto 1rem auto;
-      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+      font-size: 1.05rem;
     }
 
+    /* Responsive adjustments */
     @media (max-width: 1024px) {
       .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .project-grid {
-        grid-template-columns: 1fr 1fr;
+      .about-sections-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-mini-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 768px) {
-      .two-col,
-      .stats-grid,
-      .project-grid {
+    @media (max-width: 576px) {
+      .stats-grid {
         grid-template-columns: 1fr;
+      }
+      .hero-glass-card {
+        padding: 2.25rem 1.5rem;
+      }
+      .timeline-content {
+        flex-direction: column;
+        gap: 0.25rem;
       }
     }
   </style>
