@@ -1,0 +1,111 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="OLED Pure-Black Theme for Android TV Remote: Save Battery & Look Great"
+  description="Why the OLED black theme in your Android TV remote app matters — how pure black pixels save battery on OLED phones and creates a premium viewing experience."
+  pubDate="2025-03-01"
+  readingTime="4 min read"
+  slug="oled-black-theme-android-tv-remote"
+  tags={["OLED", "Dark Theme", "Android TV", "Battery"]}
+>
+
+## Understanding OLED Displays — Why Black Isn't Just a Color
+
+The difference between OLED and LCD screens isn't just marketing. It's a fundamental architectural difference that changes how black and dark colors behave on your phone — and it has real consequences for battery life.
+
+### How LCD Screens Work
+
+LCD (Liquid Crystal Display) panels use a backlight — a uniform light source behind the entire screen. The liquid crystals act as a shutter, blocking varying amounts of that backlight for each pixel to create colors and brightness levels. When an LCD shows a "black" pixel, it's actually blocking the backlight, but the backlight is still on. **An LCD in a dark app uses roughly the same power as an LCD in a bright app.**
+
+### How OLED Screens Work
+
+OLED (Organic Light-Emitting Diode) screens work differently. Each pixel **emits its own light**. There is no backlight. When a pixel needs to be black, it is simply turned **off**. No light, no power consumption.
+
+This means: **on an OLED screen, a pure black (#000000) pixel consumes zero power.** Dark apps with true black backgrounds can significantly reduce screen power consumption compared to the same app with a white or colored background.
+
+---
+
+## LCD Dark Mode vs. OLED Dark Mode: A Critical Distinction
+
+Here's what confuses many users: **dark mode on an LCD doesn't save battery**. When a phone with an LCD panel switches to dark mode — showing a dark grey or near-black background — the backlight is still illuminated at full brightness behind that dark screen. The LCD panel blocks more light, but the power source (the backlight) continues consuming energy.
+
+**Only OLED phones genuinely benefit from dark themes**, and only when those themes use **true black** (#000000), not dark grey (#1A1A1A or similar).
+
+| Display Type | Dark Theme Battery Savings | True Black Required |
+|---|---|---|
+| LCD / IPS | None | N/A |
+| OLED (Google Pixel, Samsung Galaxy S, OnePlus, etc.) | Yes — significant | Yes |
+| AMOLED (Samsung's OLED) | Yes — identical to OLED | Yes |
+| Mini-LED | Minimal (zone dimming) | No |
+
+---
+
+## How Much Battery Does a Black Theme Actually Save?
+
+Google's own engineering team published research in 2018 showing that on a Pixel phone running at maximum brightness, displaying a white screen consumed approximately **250mW** while displaying a pure black OLED screen consumed roughly **8mW** — about 32 times less power.
+
+In real-world use, the difference is less dramatic because most screens don't run at max brightness. But several peer-reviewed studies and independent tests consistently show **20–40% reduction in screen power consumption** when switching from a standard white/bright UI to a true black OLED theme at typical brightness levels.
+
+For apps used in short bursts (30 seconds here, a minute there), the savings per session are small. But for a **TV remote app**, the usage pattern is different — and more beneficial.
+
+---
+
+## Why a TV Remote App Specifically Benefits from OLED Theme
+
+Consider when you use your TV remote:
+
+- **At night**, watching a movie or show in a dark room
+- **During commercial breaks**, adjusting volume or switching apps
+- **While lying in bed**, browsing through content
+
+These are all low-light situations. In a dark room, even a dark grey UI on your phone screen is visually intrusive — it creates a bright glow that catches your peripheral vision and draws attention away from the TV.
+
+A **pure black OLED theme** makes the phone screen nearly invisible in a dark room. The buttons appear to float in space. It doesn't distract from what's on the TV. It feels premium and deliberate.
+
+The benefits compound:
+
+1. **Battery savings** — OLED pixels for the remote buttons are dimmer and more efficient than bright background
+2. **Eye comfort** — Less eye strain switching between a bright phone and a dark TV
+3. **Aesthetics** — A black remote on a black phone looks like a premium hardware product
+4. **Dark-room courtesy** — If others are watching with you, your phone isn't a light source
+
+---
+
+## What "Pure Black" Means in Design
+
+There's an important distinction in UI design between:
+
+- **Dark grey theme**: Uses #121212 or #1C1C1E as background — this is what most "dark mode" apps use, and it's appropriate for LCD phones
+- **OLED black theme**: Uses #000000 (pure black) as background — exclusively beneficial for OLED
+
+Some apps claim to have an "OLED mode" but actually use #0A0A0A or similar near-black values. While these look identical to the eye, they activate at least some OLED pixels and provide less power saving than true #000000.
+
+A proper OLED theme uses `#000000` for backgrounds and surfaces, with slightly lighter values (like #111111) only for interactive elements so they're distinguishable from the background.
+
+---
+
+## How to Enable the OLED Theme in TV Remote for Android TV
+
+The [TV Remote for Android TV app](/projects/android-tv-remote) includes a dedicated OLED pure-black theme:
+
+1. Open the app
+2. Tap the **Settings** icon (gear icon, top-right)
+3. Navigate to **Appearance → Theme**
+4. Select **OLED Black** (distinct from the standard dark theme)
+5. The interface immediately switches to pure black — no restart needed
+
+The OLED theme sets the entire app background to #000000, including the remote screen, the navigation bar, and the status bar area. Button icons and labels use carefully chosen contrast colors to remain clearly visible against the black background.
+
+If you have a Samsung Galaxy S series, Google Pixel, OnePlus, or any other OLED-display phone, this theme will visibly extend your battery life during TV-watching sessions. If you have an LCD phone, the theme still looks great — it just won't save battery.
+
+---
+
+## Recommended: TV Remote for Android TV
+
+[TV Remote for Android TV](/projects/android-tv-remote) is one of the few free remote apps that includes a dedicated, genuine OLED pure-black theme. Combined with its open source codebase, zero ads, and auto-discovery, it's the best choice for anyone who uses their phone as a TV remote in a dark room.
+
+[Download it free from Google Play](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) — enable the OLED theme and notice the difference immediately.
+
+</BlogLayout>

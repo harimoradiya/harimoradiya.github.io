@@ -1,0 +1,176 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Android TV vs Google TV: What's the Difference? (2025)"
+  description="Confused about Android TV vs Google TV? We break down the differences, which devices run each, and which remote apps work with both platforms."
+  pubDate="2025-02-10"
+  readingTime="6 min read"
+  slug="android-tv-vs-google-tv"
+  tags={["Android TV", "Google TV", "Comparison", "Streaming"]}
+>
+
+## The Naming Confusion Is Real
+
+If you've recently shopped for a smart TV or streaming stick, you've probably noticed the terms "Android TV" and "Google TV" used interchangeably — sometimes even on the same product page. It's one of the more confusing aspects of the modern streaming device market.
+
+The short answer: **Google TV is the newer version of Android TV**. But the longer answer involves history, UI philosophy, and technical distinctions that actually matter when choosing a device or a remote control app.
+
+---
+
+## A Brief History: Android TV (2014) and Google TV (2020)
+
+### Android TV: The Foundation (2014–present)
+
+Google launched **Android TV** in 2014 as a TV-optimized version of Android. The idea was simple: take Android, strip out mobile-specific interfaces, and build a lean, 10-foot experience (designed to be viewed from the couch, 10 feet from the screen).
+
+Android TV featured an app launcher, the Google Play Store, Google Assistant, and support for Chromecast. Sony, Philips, Hisense, Sharp, and many others built Android TV directly into their televisions. NVIDIA launched the SHIELD TV — still one of the most powerful Android TV devices ever made — in 2015.
+
+The Android TV interface was clean but minimal: a row of recommended content, your installed apps, and not much else.
+
+### Google TV: A Smarter Layer (2020–present)
+
+In 2020, Google launched **Chromecast with Google TV** — a new dongle that ran **Google TV**, a reimagined interface built **on top of Android TV**. Google TV is not a separate operating system. It is an Android TV device with a dramatically different launcher and content aggregation layer.
+
+Google TV debuted on Chromecast, then expanded to Sony TVs (2021 onward), TCL TVs, and later became the default interface for most new Google-certified smart TVs.
+
+---
+
+## Key UI Differences: Android TV vs Google TV
+
+This is where the two platforms feel genuinely different to a user.
+
+### Android TV Interface
+
+The Android TV home screen is an **app-centric launcher**. It shows:
+- A row of recently opened apps
+- A "Featured" content row
+- Individual rows from apps like Netflix, YouTube, and Google Play Movies
+- A bottom row of all installed apps
+
+It's functional but relatively simple. Navigation is purely D-pad based, and the interface is predictable.
+
+### Google TV Interface
+
+Google TV replaces the app-centric launcher with a **content-centric discovery experience**. It features:
+- **For You tab** — Personalized movie and show recommendations aggregated from all your streaming services
+- **Movies tab** — Browse movies available across your subscriptions and for purchase
+- **Shows tab** — Same for TV shows
+- **Apps tab** — Your installed apps (similar to Android TV's launcher)
+- **Library tab** — Content you've purchased or saved
+
+The key innovation in Google TV is that it knows what streaming services you subscribe to and pulls recommendations from all of them into one interface. You don't need to open Netflix, then Disney+, then HBO Max separately — Google TV shows you "something to watch" in one place.
+
+---
+
+## Which Devices Run Each?
+
+### Devices Running Android TV (Classic Interface)
+
+| Device | Manufacturer |
+|---|---|
+| NVIDIA SHIELD TV / SHIELD TV Pro | NVIDIA |
+| Mi Box S / Mi TV Stick | Xiaomi |
+| Nexus Player (discontinued) | ASUS / Google |
+| Older Sony Bravia TVs (2015–2020) | Sony |
+| Older Hisense TVs | Hisense |
+| ADT-3 (Developer Device) | ADT |
+
+### Devices Running Google TV
+
+| Device | Manufacturer |
+|---|---|
+| Chromecast with Google TV (HD/4K) | Google |
+| Bravia XR and Bravia 8/9 TVs (2021+) | Sony |
+| TCL QM8, R655, and newer series | TCL |
+| Hisense U6/U8 series (newer) | Hisense |
+| Philips OLED series (2022+) | Philips |
+
+Note that some manufacturers have announced or completed a transition from Android TV to Google TV as a software update on existing hardware.
+
+---
+
+## Under the Hood: What They Share
+
+Despite the UI differences, Android TV and Google TV share almost everything at the platform level:
+
+- **Same Android base** — Both run Android (Android 9 or later)
+- **Same app compatibility** — Apps built for Android TV run on Google TV and vice versa
+- **Same Google Play Store** — The same app ecosystem
+- **Same remote protocol** — The Android TV Remote Protocol works on both
+- **Same Google Assistant integration**
+- **Same Chromecast built-in**
+
+This is the key technical insight for remote control apps: **any app that works with Android TV also works with Google TV**, because they use the same underlying network protocol for device discovery and control.
+
+---
+
+## Remote App Compatibility: Both Platforms Work
+
+Since Android TV and Google TV share the same Remote Protocol, you don't need different apps for each. [TV Remote for Android TV](/projects/android-tv-remote) works seamlessly with both:
+
+- Connect to an NVIDIA SHIELD (Android TV) → Full control
+- Connect to a Chromecast with Google TV → Full control
+- Connect to a Sony Bravia with Android TV → Full control
+- Connect to a Sony Bravia with Google TV → Full control
+
+The auto-discovery feature identifies all compatible devices on your network regardless of which UI they're running. You'll see them listed and can connect to all of them.
+
+---
+
+## Which Should You Choose in 2025?
+
+### Choose Android TV (classic) if:
+
+- You want the most powerful hardware (NVIDIA SHIELD)
+- You prefer a simple, app-first interface without content aggregation
+- You're buying an older or budget device where Google TV isn't available
+- You're a developer or power user who wants deeper system access
+
+### Choose Google TV if:
+
+- You want personalized content discovery across multiple streaming services
+- You're buying a new mid-range to premium TV or streaming device
+- You want the most current Google features and updates
+- You value the curated "For You" recommendations
+
+### For most people in 2025: Google TV
+
+Google has clearly stated that Google TV is the future direction for all Android-based TV platforms. New Sony, TCL, and Hisense TVs ship with Google TV. The original Android TV interface is aging and receives fewer UI innovations. Unless you need NVIDIA SHIELD-level performance, Google TV is the better choice for a new purchase.
+
+---
+
+## The Future: Is Android TV Going Away?
+
+Not exactly. Google TV **is** Android TV — it's just a new face on it. Google has been gradually transitioning the brand: as of 2022, the Android TV operating system developer pages were updated to note that new devices should ship with Google TV.
+
+For end users, this means:
+- The "Android TV" brand will fade as new devices adopt the Google TV label
+- Existing Android TV devices continue to receive updates
+- App developers target one unified platform (Android TV / Google TV APIs are identical)
+- Remote apps like ours will continue to work on all devices
+
+---
+
+## Summary
+
+| | Android TV | Google TV |
+|---|---|---|
+| Launched | 2014 | 2020 |
+| Based on | Android | Android (same base) |
+| UI Focus | Apps | Content discovery |
+| Key Feature | Simple app launcher | "For You" recommendations |
+| Current devices | SHIELD, older TVs | Chromecast, new Sony/TCL/Hisense |
+| Remote app compatibility | ✅ Full | ✅ Full |
+| Future roadmap | Legacy | Active development |
+
+---
+
+## Recommended: TV Remote for Android TV
+
+Whether you have an Android TV or Google TV device, [TV Remote for Android TV](/projects/android-tv-remote) gives you full Wi-Fi remote control with D-pad navigation, keyboard input, and media controls. It auto-discovers both platform types and connects instantly.
+
+[Download it free on Google Play](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) — one app, both platforms, zero ads.
+
+</BlogLayout>

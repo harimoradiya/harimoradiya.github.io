@@ -2,12 +2,16 @@
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
 import SectionCard from '../components/about/SectionCard.astro';
+import { Image } from 'astro:assets';
+import profilePic from '../assets/profilepic.jpeg';
+
+const siteUrl = 'https://harimoradiya.github.io';
 
 const highlights = [
   { label: 'Years Building', value: '4+' },
   { label: 'Products Delivered', value: '20+' },
   { label: 'Cross-Platform Releases', value: '10+' },
-  { label: 'Avg Rating Focus', value: '4.8/5' },
+  { label: 'Avg App Rating', value: '4.8/5' },
 ];
 
 const services = [
@@ -25,429 +29,478 @@ const techStack = [
   'Ktor',
   'PostgreSQL',
   'Compose Multiplatform',
-  'Material Design',
+  'Material Design 3',
 ];
 
 const journey = [
-  { year: '2020', detail: 'Started shipping Android features with a user-first mindset.' },
-  { year: '2022', detail: 'Joined product engineering at Vasuka and delivered production apps.' },
-  { year: '2024', detail: 'Expanded into backend APIs, architecture, and reliability-led workflows.' },
-  { year: '2026', detail: 'Building polished cross-platform products with faster release cycles.' },
+  { year: '2020', detail: 'Started shipping Android features with a user-first mindset, learning Kotlin and modern Android architecture.' },
+  { year: '2022', detail: 'Joined product engineering at Vasuka and delivered production-grade Android applications.' },
+  { year: '2024', detail: 'Expanded into backend APIs with Ktor and PostgreSQL, and released first open-source app to 1K+ users.' },
+  { year: '2026', detail: 'Building polished cross-platform products with faster release cycles and growing open-source community.' },
 ];
 
 const projects = [
-  { name: 'Android TV Remote', impact: 'Tactile iOS remote control experience built with Flutter.' },
-  { name: 'WiFi Mouse Remote', impact: 'Low-latency computer control client built using Compose Multiplatform.' },
-  { name: 'RMS API', impact: 'High-performance restaurant APIs engineered with Kotlin, Ktor, and Docker.' },
+  { name: 'TV Remote for Android TV', impact: '1K+ downloads, 4.7★ rating. Open-source Android TV remote control app. Zero ads, zero tracking.' },
+  { name: 'Android TV Remote (iOS)', impact: 'Flutter-based iPhone remote for Android TV and Google TV. Clean Material Design interface.' },
+  { name: 'WiFi Mouse Remote', impact: 'Low-latency computer control client built using Compose Multiplatform and Java Sockets.' },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Hari Moradiya",
+    "alternateName": "Harikrushn Devjibhai Moradiya",
+    "url": siteUrl,
+    "image": `${siteUrl}/profilepic.jpeg`,
+    "jobTitle": "Software Engineer",
+    "description": "Software Engineer specializing in Android, iOS, and backend development. 4+ years of experience building premium mobile applications.",
+    "knowsAbout": ["Kotlin", "Jetpack Compose", "Flutter", "Ktor", "PostgreSQL", "Android TV"],
+    "sameAs": [
+      "https://github.com/harimoradiya",
+      "https://www.linkedin.com/in/hari-moradiya-0a7145179/"
+    ]
+  }
+};
 ---
 
-<Layout>
+<Layout
+  title="About Hari Moradiya | Android & iOS Software Engineer"
+  description="Learn about Hari Moradiya — a software engineer with 4+ years of experience building premium Android apps, iOS apps, and backend systems. Creator of TV Remote for Android TV."
+  canonicalUrl={`${siteUrl}/about`}
+  jsonLd={jsonLd}
+>
   <div class="about-page">
-    <!-- Hero Header -->
+
+    <!-- Hero -->
     <section class="about-hero">
-      <div class="hero-glass-card">
-        <span class="eyebrow">Profile</span>
-        <h1 class="about-title">Harikrushn Devjibhai <span class="gradient-text">Moradiya</span></h1>
-        <p class="about-lead">
-          I am a software engineer focused on building premium mobile and backend product experiences. I design reliable, elegant applications that are fast, secure, and production-ready.
-        </p>
+      <div class="hero-glass glass-card">
+        <div class="hero-inner">
+          <div class="hero-photo-col reveal-left">
+            <div class="about-photo-wrap">
+              <Image
+                src={profilePic}
+                alt="Hari Moradiya - Software Engineer"
+                width={200}
+                height={200}
+                class="about-photo"
+                loading="eager"
+              />
+              <div class="photo-ring"></div>
+            </div>
+          </div>
+          <div class="hero-text-col reveal">
+            <span class="section-eyebrow">Profile</span>
+            <h1 class="about-title">
+              Harikrushn Devjibhai <span class="gradient-text">Moradiya</span>
+            </h1>
+            <p class="about-lead">
+              I am a software engineer focused on building premium mobile and backend product experiences.
+              I design reliable, elegant applications that are fast, secure, and production-ready —
+              used by thousands of people worldwide.
+            </p>
+            <div class="hero-actions">
+              <a href="mailto:harimoradiya123@gmail.com" class="btn btn-primary" id="about-contact-btn">
+                Get in Touch
+              </a>
+              <a href="https://github.com/harimoradiya" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="about-github-btn">
+                GitHub Profile
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Stats Grid -->
-    <section class="stats-grid" aria-label="Achievements">
-      {highlights.map((item) => (
-        <article class="stat-card">
+    <section class="stats-grid-section reveal stagger-children" aria-label="Key statistics">
+      {highlights.map(item => (
+        <article class="stat-card card">
           <p class="stat-value">{item.value}</p>
           <p class="stat-label">{item.label}</p>
         </article>
       ))}
     </section>
 
-    <!-- Core Grid Sections -->
+    <!-- Core Grid -->
     <div class="about-sections-grid">
-      <SectionCard title="Story" subtitle="Built with ownership, clarity, and consistency.">
-        <p class="paragraph-spacing">
-          I specialize in mobile app engineering and full product delivery, including robust backend services and cross-platform mobile clients. My development mindset centers around user trust, app speed, and clean code principles.
-        </p>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Story" subtitle="Built with ownership, clarity, and consistency.">
+          <p class="paragraph-spacing">
+            I specialize in mobile app engineering and full product delivery, including robust backend services and cross-platform mobile clients.
+            My development mindset centers around user trust, app speed, and clean code principles.
+          </p>
+          <p>
+            I've shipped apps that are used daily by thousands of users across Android and iOS, and I actively maintain open-source projects on GitHub.
+          </p>
+        </SectionCard>
+      </div>
 
-      <SectionCard title="Experience Highlights" subtitle="Core areas where I consistently deliver value.">
-        <ul class="highlights-list">
-          <li>Production-ready app delivery using Kotlin, Flutter, and Material You design standards.</li>
-          <li>Backend REST-API engineering utilizing Kotlin Ktor, PostgreSQL, and scalable Docker setups.</li>
-          <li>Continuous integration, code quality, and device testing workflows.</li>
-        </ul>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Experience Highlights" subtitle="Core areas where I consistently deliver value.">
+          <ul class="highlights-list">
+            <li>Production-ready app delivery using Kotlin, Flutter, and Material Design 3 standards.</li>
+            <li>Backend REST API engineering with Kotlin Ktor, PostgreSQL, and Docker deployments.</li>
+            <li>Open-source project maintenance with community-focused development practices.</li>
+            <li>Continuous integration, automated testing, and device-specific quality workflows.</li>
+          </ul>
+        </SectionCard>
+      </div>
 
-      <SectionCard title="Mission">
-        <p>
-          Deliver software utilities that are highly responsive, simple to navigate, stable under load, and visually delightful across all platforms.
-        </p>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Mission">
+          <p>
+            Deliver software utilities that are highly responsive, simple to navigate, stable under load, and visually delightful across all platforms — while always respecting user privacy.
+          </p>
+        </SectionCard>
+      </div>
 
-      <SectionCard title="Vision">
-        <p>
-          Establish premium digital products where design quality, user privacy, and engineering reliability are equally prioritized.
-        </p>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Vision">
+          <p>
+            Establish premium digital products where design quality, user privacy, and engineering reliability are equally prioritized. Open source as a default, ads as a last resort.
+          </p>
+        </SectionCard>
+      </div>
 
-      <SectionCard title="Services & Expertise">
-        <div class="chips-container">
-          {services.map((service) => <span class="chip-item">{service}</span>)}
-        </div>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Services & Expertise">
+          <div class="chips-container">
+            {services.map(service => <span class="chip">{service}</span>)}
+          </div>
+        </SectionCard>
+      </div>
 
-      <SectionCard title="Core Tech Stack">
-        <div class="chips-container">
-          {techStack.map((tech) => <span class="chip-item accent-chip">{tech}</span>)}
-        </div>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Core Tech Stack">
+          <div class="chips-container">
+            {techStack.map(tech => <span class="chip chip-accent">{tech}</span>)}
+          </div>
+        </SectionCard>
+      </div>
     </div>
 
-    <!-- Timeline Journey -->
+    <!-- Journey Timeline -->
     <section class="journey-section">
-      <SectionCard title="Journey Timeline" subtitle="My professional trajectory.">
-        <div class="timeline-wrapper">
-          <div class="timeline-line"></div>
-          {journey.map((step) => (
-            <div class="timeline-node-item">
-              <div class="timeline-bullet"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">{step.year}</span>
-                <p class="timeline-text">{step.detail}</p>
+      <div class="reveal">
+        <SectionCard title="Journey Timeline" subtitle="My professional trajectory over the years.">
+          <div class="timeline-wrapper">
+            <div class="timeline-line" aria-hidden="true"></div>
+            {journey.map(step => (
+              <div class="timeline-node-item">
+                <div class="timeline-bullet" aria-hidden="true"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">{step.year}</span>
+                  <p class="timeline-text">{step.detail}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </SectionCard>
+            ))}
+          </div>
+        </SectionCard>
+      </div>
     </section>
 
     <!-- Project Highlights -->
     <section class="about-projects">
-      <SectionCard title="Key Outcomes & Project Highlights" subtitle="Selected results from recent releases.">
-        <div class="projects-mini-grid">
-          {projects.map((project) => (
-            <div class="mini-project-card">
-              <h4>{project.name}</h4>
-              <p>{project.impact}</p>
-            </div>
-          ))}
-        </div>
-      </SectionCard>
+      <div class="reveal">
+        <SectionCard title="Key Projects & Outcomes" subtitle="Selected results from recent releases.">
+          <div class="projects-mini-grid">
+            {projects.map(project => (
+              <div class="mini-project-card card">
+                <h4>{project.name}</h4>
+                <p>{project.impact}</p>
+              </div>
+            ))}
+          </div>
+        </SectionCard>
+      </div>
     </section>
 
-    <!-- Call to Action Card -->
-    <section class="cta-bottom">
-      <div class="cta-card">
+    <!-- CTA -->
+    <section class="cta-bottom reveal">
+      <div class="cta-card glass-card">
         <h2>Let's Build Something Premium Together</h2>
         <p>
-          If you are looking for a reliable software engineer to deliver high-quality mobile apps or scalable backend systems, let's connect and build your next release.
+          If you are looking for a reliable software engineer to deliver high-quality mobile apps or scalable backend systems,
+          let's connect and build your next release.
         </p>
-        <a href="https://www.linkedin.com/in/hari-moradiya-0a7145179/" target="_blank" rel="noopener noreferrer" class="btn-modern btn-modern-primary">
-          Start a Conversation
-        </a>
+        <div class="cta-actions">
+          <a href="mailto:harimoradiya123@gmail.com" class="btn btn-primary btn-lg" id="about-cta-email-btn">
+            Send an Email
+          </a>
+          <a href="https://www.linkedin.com/in/hari-moradiya-0a7145179/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" id="about-cta-linkedin-btn">
+            Connect on LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   </div>
-
-  <style>
-    .about-page {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    /* Hero Section */
-    .about-hero {
-      padding-top: 1rem;
-    }
-
-    .hero-glass-card {
-      background: var(--bg-surface-glass);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-lg);
-      border-radius: 32px;
-      padding: 3.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-glass-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 32px;
-      padding: 1.5px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), transparent, rgba(168, 85, 247, 0.2));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .about-title {
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #4f46e5 30%, #8b5cf6 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .about-lead {
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 800px;
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    .stat-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--card-radius);
-      padding: 1.75rem 1.25rem;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow-md);
-    }
-
-    .stat-value {
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-    }
-
-    /* Core Sections Grid */
-    .about-sections-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.75rem;
-    }
-
-    .paragraph-spacing {
-      margin-bottom: 1rem;
-    }
-
-    .highlights-list {
-      padding-left: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .highlights-list li {
-      line-height: 1.5;
-    }
-
-    .chips-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-
-    .chip-item {
-      background: var(--bg-base);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      padding: 0.45rem 1rem;
-      border-radius: 99px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-
-    .chip-item.accent-chip {
-      background: var(--primary-glow);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    /* Journey Timeline */
-    .journey-section {
-      width: 100%;
-    }
-
-    .timeline-wrapper {
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    .timeline-line {
-      position: absolute;
-      left: 7px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--border-color);
-    }
-
-    .timeline-node-item {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .timeline-node-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-bullet {
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--bg-surface);
-      border: 4.5px solid var(--primary);
-      z-index: 2;
-    }
-
-    .timeline-content {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .timeline-year {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      min-width: 50px;
-    }
-
-    .timeline-text {
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    /* Projects mini grid */
-    .projects-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-    .mini-project-card {
-      background: var(--bg-base);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 1.5rem;
-    }
-
-    .mini-project-card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .mini-project-card p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Call to Action */
-    .cta-bottom {
-      padding-top: 1rem;
-    }
-
-    .cta-card {
-      background: linear-gradient(135deg, var(--bg-surface), var(--bg-base));
-      border: 1px solid var(--border-color);
-      border-radius: 28px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-card h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .cta-card p {
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-sections-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-mini-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-glass-card {
-        padding: 2.25rem 1.5rem;
-      }
-      .timeline-content {
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-    }
-  </style>
 </Layout>
+
+<style>
+  .about-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  /* Hero */
+  .about-hero { padding-top: 0.5rem; }
+
+  .hero-glass { padding: 0; overflow: hidden; }
+
+  .hero-inner {
+    padding: 3rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-photo-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-photo-wrap {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+
+  .about-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    display: block;
+  }
+
+  .photo-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px dashed var(--primary);
+    opacity: 0.3;
+    animation: spinSlow 20s linear infinite;
+  }
+
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .about-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .about-lead {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    max-width: 620px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Stats */
+  .stats-grid-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .stat-card {
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  /* Core grid */
+  .about-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .highlights-list {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .highlights-list li { line-height: 1.6; }
+
+  .paragraph-spacing { margin-bottom: 1rem; color: var(--text-secondary); }
+
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Journey timeline */
+  .journey-section, .about-projects { width: 100%; }
+
+  .timeline-wrapper {
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+  }
+
+  .timeline-node-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-node-item:last-child { margin-bottom: 0; }
+
+  .timeline-bullet {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 3.5px solid var(--primary);
+    z-index: 2;
+  }
+
+  .timeline-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .timeline-year {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--primary);
+    min-width: 44px;
+    padding-top: 2px;
+  }
+
+  .timeline-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+  }
+
+  /* Mini projects */
+  .projects-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .mini-project-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .mini-project-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .mini-project-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  /* CTA */
+  .cta-bottom { padding-top: 1rem; }
+
+  .cta-card {
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+
+  .cta-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-card p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-photo-col { justify-content: center; }
+    .hero-actions { justify-content: center; }
+
+    .stats-grid-section { grid-template-columns: repeat(2, 1fr); }
+    .about-sections-grid { grid-template-columns: 1fr; }
+    .projects-mini-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid-section { grid-template-columns: repeat(2, 1fr); }
+    .timeline-content { flex-direction: column; gap: 0.25rem; }
+    .cta-card { padding: 2.5rem 1.5rem; }
+  }
+</style>

@@ -1,0 +1,430 @@
+---
+// src/pages/blog/index.astro
+// Blog listing page
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'what-is-android-tv-remote',
+    title: 'What Is an Android TV Remote App and How Does It Work?',
+    description: 'Learn how Android TV remote apps connect to your TV over Wi-Fi, what the Android TV Input Framework does, and why a phone app is better than a physical remote.',
+    pubDate: '2025-01-10',
+    readingTime: '6 min read',
+    tags: ['Android TV', 'Remote Control', 'Wi-Fi', 'How It Works'],
+    featured: true,
+  },
+  {
+    slug: 'how-to-connect-android-tv-remote-wifi',
+    title: 'How to Connect Android TV Remote via Wi-Fi — Step-by-Step Guide',
+    description: 'A complete step-by-step guide to setting up and connecting your phone as a remote control for Android TV or Google TV devices over your local Wi-Fi network.',
+    pubDate: '2025-01-18',
+    readingTime: '5 min read',
+    tags: ['Android TV', 'Setup Guide', 'Wi-Fi', 'Google TV'],
+    featured: true,
+  },
+  {
+    slug: 'best-free-android-tv-remote-apps',
+    title: 'Best Free Android TV Remote Apps in 2025 (Compared)',
+    description: 'We compared the top free Android TV remote control apps available on the Play Store in 2025 — looking at features, privacy, ads, and ease of use.',
+    pubDate: '2025-01-25',
+    readingTime: '8 min read',
+    tags: ['Android TV', 'App Comparison', 'Remote Apps', 'Free Apps'],
+    featured: true,
+  },
+  {
+    slug: 'chromecast-remote-control-guide',
+    title: 'Chromecast Remote Control: The Complete Wi-Fi Guide',
+    description: 'How to control your Chromecast with Google TV using a phone app over Wi-Fi — including D-pad navigation, keyboard input, and media controls.',
+    pubDate: '2025-02-02',
+    readingTime: '7 min read',
+    tags: ['Chromecast', 'Google TV', 'Remote Control', 'Wi-Fi'],
+    featured: false,
+  },
+  {
+    slug: 'android-tv-vs-google-tv',
+    title: 'Android TV vs Google TV: What\'s the Difference? (2025)',
+    description: 'Confused about Android TV vs Google TV? We break down the differences, which devices run each, and which remote apps work with both platforms.',
+    pubDate: '2025-02-10',
+    readingTime: '6 min read',
+    tags: ['Android TV', 'Google TV', 'Comparison', 'Streaming'],
+    featured: false,
+  },
+  {
+    slug: 'dpad-navigation-android-tv',
+    title: 'How to Use D-Pad Navigation on Android TV Like a Pro',
+    description: 'Master D-pad navigation on Android TV and Google TV — shortcuts, tips, and how using a phone remote with D-pad makes navigation faster and more precise.',
+    pubDate: '2025-02-20',
+    readingTime: '5 min read',
+    tags: ['Android TV', 'D-Pad', 'Navigation', 'Tips'],
+    featured: false,
+  },
+  {
+    slug: 'oled-black-theme-android-tv-remote',
+    title: 'OLED Pure-Black Theme for Android TV Remote: Save Battery & Look Great',
+    description: 'Why the OLED black theme in your Android TV remote app matters — how pure black pixels save battery on OLED phones and creates a premium viewing experience.',
+    pubDate: '2025-03-01',
+    readingTime: '4 min read',
+    tags: ['OLED', 'Dark Theme', 'Android TV', 'Battery'],
+    featured: false,
+  },
+  {
+    slug: 'open-source-android-tv-remote-review',
+    title: 'Why Open Source Android TV Remote Apps Are Better',
+    description: 'Open source TV remote apps offer transparency, privacy, and no hidden ads. Here\'s why you should choose an open source Android TV remote and what to look for.',
+    pubDate: '2025-03-12',
+    readingTime: '6 min read',
+    tags: ['Open Source', 'Privacy', 'Android TV', 'App Review'],
+    featured: false,
+  },
+  {
+    slug: 'customizable-remote-layouts-android-tv',
+    title: 'Customizable Remote Layouts: Build Your Perfect Android TV Remote',
+    description: 'How customizable remote layouts in Android TV apps let you rearrange buttons, hide unused controls, and create the perfect one-handed remote experience.',
+    pubDate: '2025-03-22',
+    readingTime: '5 min read',
+    tags: ['Customization', 'Android TV', 'UI', 'Remote Layout'],
+    featured: false,
+  },
+  {
+    slug: 'android-tv-keyboard-input-wifi',
+    title: 'Android TV Keyboard Input via Wi-Fi: Type on Your TV from Your Phone',
+    description: 'Typing on Android TV with the on-screen keyboard is painful. Here\'s how Wi-Fi keyboard input from your phone makes it instant and comfortable.',
+    pubDate: '2025-04-01',
+    readingTime: '5 min read',
+    tags: ['Android TV', 'Keyboard', 'Wi-Fi', 'Text Input'],
+    featured: false,
+  },
+];
+
+const siteUrl = 'https://harimoradiya.github.io';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Hari Moradiya Blog",
+  "description": "Articles about Android TV remote control, open-source development, and mobile app engineering.",
+  "url": `${siteUrl}/blog`,
+  "author": {
+    "@type": "Person",
+    "name": "Hari Moradiya",
+    "url": siteUrl,
+  }
+};
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'short', day: 'numeric',
+  });
+}
+---
+
+<Layout
+  title="Blog — Android TV Remote, Open Source Dev | Hari Moradiya"
+  description="Articles about Android TV remote control apps, open-source development, and mobile engineering from Hari Moradiya."
+  canonicalUrl={`${siteUrl}/blog`}
+  jsonLd={jsonLd}
+>
+  <div class="blog-page">
+    <!-- Header -->
+    <section class="blog-hero reveal">
+      <span class="section-eyebrow">Writing</span>
+      <h1 class="blog-title">Blog</h1>
+      <p class="blog-desc">
+        In-depth articles on Android TV remote control, open-source development, and mobile engineering.
+        Covering topics to help you get the most from your Android TV setup.
+      </p>
+    </section>
+
+    <!-- Featured posts -->
+    <section class="featured-posts" aria-labelledby="featured-title">
+      <h2 class="sub-heading" id="featured-title">Featured Articles</h2>
+      <div class="featured-grid">
+        {posts.filter(p => p.featured).map((post, i) => (
+          <a href={`/blog/${post.slug}`} class="featured-card card reveal" style={`animation-delay: ${i * 0.1}s`}>
+            <div class="fc-meta">
+              <div class="fc-tags">
+                {post.tags.slice(0,2).map(t => <span class="chip chip-accent">{t}</span>)}
+              </div>
+              <time class="fc-date" datetime={post.pubDate}>{formatDate(post.pubDate)}</time>
+            </div>
+            <h3 class="fc-title">{post.title}</h3>
+            <p class="fc-desc">{post.description}</p>
+            <div class="fc-footer">
+              <span class="fc-reading">⏱ {post.readingTime}</span>
+              <span class="fc-cta">Read article →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- All posts -->
+    <section class="all-posts" aria-labelledby="all-posts-title">
+      <h2 class="sub-heading" id="all-posts-title">All Articles</h2>
+      <div class="posts-list stagger-children">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="post-row card" aria-label={post.title}>
+            <div class="pr-left">
+              <div class="pr-tags">
+                {post.tags.slice(0,2).map(t => <span class="chip">{t}</span>)}
+              </div>
+              <h3 class="pr-title">{post.title}</h3>
+              <p class="pr-desc">{post.description}</p>
+            </div>
+            <div class="pr-right">
+              <time class="pr-date" datetime={post.pubDate}>{formatDate(post.pubDate)}</time>
+              <span class="pr-reading">{post.readingTime}</span>
+              <span class="pr-cta">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="blog-cta reveal">
+      <div class="glass-card blog-cta-card">
+        <h2 class="blog-cta-title">Try the App We Write About</h2>
+        <p>The Android TV Remote app is free, open source, and available on the Play Store right now.</p>
+        <a href="/projects/android-tv-remote" class="btn btn-primary btn-lg" id="blog-app-cta-btn">
+          📺 See Android TV Remote
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .blog-page {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .blog-hero {
+    text-align: center;
+    padding: 1rem 0 2rem;
+  }
+
+  .blog-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .blog-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Featured grid */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .featured-card {
+    text-decoration: none;
+    color: inherit;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .fc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .fc-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .fc-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .fc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .fc-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex-grow: 1;
+  }
+
+  .fc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+    margin-top: auto;
+    gap: 1rem;
+  }
+
+  .fc-reading {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .fc-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    white-space: nowrap;
+    transition: letter-spacing 0.2s ease;
+  }
+
+  .featured-card:hover .fc-cta {
+    letter-spacing: 0.03em;
+  }
+
+  /* Posts list */
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .post-row {
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .pr-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pr-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .pr-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .pr-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pr-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+
+  .pr-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pr-reading {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .pr-cta {
+    font-size: 1.1rem;
+    color: var(--primary);
+    transition: transform 0.2s;
+  }
+
+  .post-row:hover .pr-cta {
+    transform: translateX(4px);
+  }
+
+  /* Blog CTA */
+  .blog-cta-card {
+    padding: 3rem 2.5rem;
+    text-align: center;
+  }
+
+  .blog-cta-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .blog-cta-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .featured-grid { grid-template-columns: 1fr; }
+
+    .post-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pr-right {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+</style>

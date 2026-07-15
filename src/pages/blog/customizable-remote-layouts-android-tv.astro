@@ -1,0 +1,162 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Customizable Remote Layouts: Build Your Perfect Android TV Remote"
+  description="How customizable remote layouts in Android TV apps let you rearrange buttons, hide unused controls, and create the perfect one-handed remote experience."
+  pubDate="2025-03-22"
+  readingTime="5 min read"
+  slug="customizable-remote-layouts-android-tv"
+  tags={["Customization", "Android TV", "UI", "Remote Layout"]}
+>
+
+## The Problem with Fixed Remote Layouts
+
+Every physical remote control that ships with an Android TV or Google TV device has the same fundamental flaw: **it was designed by committee for an imaginary average user**. The result is a remote with 30+ buttons when you regularly use maybe 8. The buttons you need are the wrong size. The ones you never touch are right in the center of the remote.
+
+Sound familiar? Here's what a typical Android TV physical remote looks like:
+
+- D-pad (essential)
+- Home button (essential)
+- Back button (essential)
+- Google Assistant microphone (occasionally useful)
+- Volume buttons (essential)
+- Power button (sometimes useful)
+- Netflix button (only if you use Netflix)
+- YouTube button (only if you use YouTube)
+- Mute button (essential)
+- Channel up/down (useless on streaming devices)
+- Number pad (occasionally useful)
+- Input/Source button (rarely needed)
+- Color buttons (almost never used outside of broadcast TV features)
+
+You use 7–8 buttons constantly and the other 20+ almost never. With a physical remote, there's nothing you can do about that. With a phone-based remote app that supports customizable layouts, you have full control.
+
+---
+
+## What Customizable Layouts Offer
+
+A well-implemented customizable layout system lets you:
+
+### Hide Unused Buttons
+
+Remove the clutter. If you never use channel buttons, color buttons, or the teletext controls, hide them entirely. A cleaner interface means faster navigation — you always tap what you intend to tap.
+
+### Resize the D-Pad
+
+The D-pad is the heart of Android TV navigation. Making it larger reduces accidental presses. A larger D-pad also makes thumb navigation more comfortable, especially when lying on the couch or holding the phone with one hand.
+
+### Rearrange Sections
+
+Some users prefer volume controls at the top (thumbs-up position), others want them at the bottom. Some want media controls directly below the D-pad; others prefer them separate. A customizable layout accommodates all of these preferences.
+
+### Create Use-Case-Specific Layouts
+
+Different TV activities need different remotes:
+- **Movie/TV binge watching**: Large D-pad, prominent play/pause, big volume buttons. No channel buttons needed.
+- **YouTube browsing**: D-pad, keyboard quick-access, thumbs up/down shortcuts, search button
+- **Music playback**: Skip forward/backward, shuffle, repeat — navigation is less important
+
+---
+
+## Accessibility Benefits of Customizable Layouts
+
+Customizable layouts aren't just a convenience feature. For many users, they're a genuine accessibility requirement.
+
+### Larger Buttons for Low-Vision Users
+
+The standard button size on most remote apps is designed for average-dexterity adults with normal vision. For users with low vision, tremors, or reduced fine motor control, standard buttons may be too small to use reliably.
+
+A customizable layout can increase button sizes dramatically. A D-pad that fills two-thirds of the screen is unusable for a standard user but perfect for someone with limited dexterity. The app should accommodate both.
+
+### Reduced Cognitive Load
+
+For elderly users or those unfamiliar with technology, a remote with fewer, larger, well-labeled buttons is significantly easier to use. Hiding unfamiliar buttons (like the settings shortcut or picture-in-picture toggle) reduces confusion.
+
+### One-Handed Operation
+
+Many users want to control their TV with one hand while the other is occupied — holding a drink, a snack, or caring for a child. A layout optimized for one-handed use positions the most important controls within easy thumb reach of the bottom of the screen.
+
+The standard layout assumes two-handed use. A one-handed-optimized layout moves essential controls lower, makes buttons larger, and removes anything non-essential from the reachable zone.
+
+---
+
+## How to Customize Your Layout in TV Remote for Android TV
+
+[TV Remote for Android TV](/projects/android-tv-remote) includes a layout customization system accessible from the app's Settings menu:
+
+1. **Open the app** and connect to your TV
+2. **Tap Settings** (gear icon)
+3. **Select Remote Layout**
+4. **Choose your layout style**: Default, Compact, D-Pad Focused, or Custom
+5. **In Custom mode**: Toggle individual button groups on/off, adjust D-pad size using the slider, and drag sections to reorder them
+6. **Save your layout** — it's automatically applied next time you connect
+
+Changes take effect immediately, so you can preview and iterate without saving.
+
+---
+
+## Different Layouts for Different Use Cases
+
+### Netflix Binge Layout
+
+When binge-watching Netflix or any streaming service, you primarily need:
+- **D-pad** (large) — for navigating episodes and menus
+- **Play/Pause** — the most-used button while watching
+- **Back** — to exit to the main screen
+- **Volume + Mute** — essentials
+
+What you don't need:
+- YouTube shortcut button
+- Channel buttons
+- Color buttons
+- Number pad
+
+**Recommended configuration**: Hide channel/color buttons, make D-pad 60% of screen height, place play/pause prominently below D-pad.
+
+### Gaming Layout
+
+If you're playing casual Android TV games (some games support D-pad navigation from a remote):
+- **D-pad** — must be large and responsive
+- **Back/Menu** — for game menus
+- Minimize media buttons
+
+### YouTube Layout
+
+YouTube on Android TV benefits from:
+- **D-pad** for navigating the home feed and search results
+- **Keyboard button** prominently placed (for searching)
+- **Play/Pause** and **Skip** for video playback
+- **Volume controls**
+
+---
+
+## Why Customizable Layouts Beat Physical Remotes
+
+Let's be direct about it:
+
+| Feature | Physical Remote | Customizable Phone Remote |
+|---|---|---|
+| Button layout | Fixed by manufacturer | Fully customizable |
+| Button size | Fixed, often small | Adjustable |
+| Unused buttons | Always visible | Can be hidden |
+| One-hand optimization | Usually no | Yes |
+| Accessibility (large buttons) | Rare/expensive models | Standard feature |
+| Night use (backlit) | Some remotes only | Always (phone screen) |
+| Replacement cost | $20–$50 | Free |
+| Learning curve | Immediate | Minutes to customize |
+
+The physical remote wins only on: tactile button feel, dedicated hardware (doesn't need charging), and simplicity for non-tech users. Everything else tilts toward a customizable phone remote.
+
+---
+
+## Recommended: TV Remote for Android TV
+
+[TV Remote for Android TV](/projects/android-tv-remote) is built around the principle that a remote should adapt to you, not the other way around. The customizable layout system lets you build a remote that matches exactly how you watch TV — whether that's a minimalist D-pad-only interface or a full-featured media center controller.
+
+It's completely free, open source, and works with all Android TV and Google TV devices via Wi-Fi.
+
+[Download it on Google Play](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) — customize it in minutes, use it for years.
+
+</BlogLayout>

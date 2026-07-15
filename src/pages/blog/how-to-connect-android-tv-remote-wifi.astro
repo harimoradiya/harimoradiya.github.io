@@ -1,0 +1,153 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="How to Connect Android TV Remote via Wi-Fi — Step-by-Step Guide"
+  description="A complete step-by-step guide to setting up and connecting your phone as a remote control for Android TV or Google TV devices over your local Wi-Fi network."
+  pubDate="2025-01-18"
+  readingTime="5 min read"
+  slug="how-to-connect-android-tv-remote-wifi"
+  tags={["Android TV", "Setup Guide", "Wi-Fi", "Google TV"]}
+>
+
+## Why Use Your Phone as an Android TV Remote Over Wi-Fi?
+
+Losing a physical remote is frustrating — and replacing one from a TV manufacturer can cost $20–$50. But there's a better solution hiding in your pocket. Your Android phone can become a fully functional remote control for Android TV and Google TV devices using your home Wi-Fi network. No Bluetooth pairing headaches, no line-of-sight requirements, and no extra hardware needed.
+
+Wi-Fi-based remote control has several advantages over traditional infrared or Bluetooth remotes. The control signals travel over your local network, meaning the TV doesn't even need to be in the same room. You get a full keyboard for searching, touchpad input, D-pad navigation, and media controls — all from an app on your phone.
+
+This guide walks you through the entire connection process, step by step.
+
+---
+
+## What You'll Need Before You Start
+
+Before diving into the setup, make sure you have the following:
+
+- An Android smartphone running Android 5.0 or later
+- An Android TV or Google TV device (Chromecast with Google TV, Sony Bravia, Hisense, NVIDIA SHIELD, Xiaomi Mi Box, etc.)
+- Both devices connected to the **same Wi-Fi network** — this is the most critical requirement
+- The TV powered on and showing the home screen or any active interface
+
+---
+
+## Step 1: Download the App from the Play Store
+
+The first step is to install **TV Remote for Android TV** on your phone. You can find it on the Google Play Store:
+
+👉 [Download TV Remote for Android TV](https://play.google.com/store/apps/details?id=com.hari.androidtvremote)
+
+The app is free to download and requires no account sign-up. Once installed, open it — you'll land on the device discovery screen.
+
+---
+
+## Step 2: Ensure Both Devices Are on the Same Wi-Fi Network
+
+This step is the single most common reason the connection fails. Your phone and your TV **must be on the exact same Wi-Fi network**.
+
+To verify on Android TV:
+1. Press the Home button on your physical remote (if available)
+2. Go to **Settings → Network & Internet**
+3. Note the network name (SSID) shown
+
+On your phone:
+1. Open **Settings → Wi-Fi**
+2. Confirm you're connected to the same SSID
+
+> **Important:** If your router broadcasts both 2.4GHz and 5GHz bands with different names, make sure both devices are on the same band, or use the same unified SSID if your router supports band steering.
+
+---
+
+## Step 3: Open the App and Auto-Discover Your TV
+
+Once both devices share the same network, open **TV Remote for Android TV** on your phone. The app uses Android's built-in **Remote Device Protocol** (the same protocol Google's own remote uses) to broadcast a discovery request on your local network.
+
+Within a few seconds, your TV should appear in the device list. The app displays:
+- The TV's device name (e.g., "Living Room TV" or the model name)
+- The TV's local IP address
+- The TV's type (Android TV or Google TV)
+
+Tap your TV from the list to initiate pairing.
+
+---
+
+## Step 4: Confirm the PIN on Your TV Screen
+
+When you select your TV in the app, a **4-digit PIN code** will appear on your television screen. This is a one-time security measure to ensure only authorized devices can control your TV.
+
+Enter that PIN in the app on your phone and tap **Confirm**. The pairing is saved — you won't need to re-enter it the next time you connect. The app remembers paired TVs and reconnects automatically.
+
+---
+
+## Step 5: Start Using Your Phone as a Remote
+
+You're now connected! The app's main screen provides:
+
+- **D-pad navigation** — large, tap-friendly directional controls
+- **Media controls** — play, pause, rewind, fast-forward
+- **Volume controls** — up, down, and mute
+- **Home, Back, and Recents** buttons
+- **Full keyboard** — tap the keyboard icon to type on your TV instantly
+- **Touchpad mode** — swipe to navigate, tap to select
+
+You can switch between D-pad and touchpad mode at any time.
+
+---
+
+## Troubleshooting: What to Do When the TV Isn't Found
+
+If your TV doesn't appear in the device list after 10–15 seconds, try these fixes:
+
+### TV Not Found — Checklist
+
+| Problem | Solution |
+|---|---|
+| Phone and TV on different networks | Connect both to the same Wi-Fi SSID |
+| TV is off or in standby mode | Power on the TV fully, go to the home screen |
+| Android TV Remote Service disabled | Enable it in TV Settings → Apps |
+| Firewall or router isolation | Disable AP/client isolation in router settings |
+| VPN active on phone | Disable VPN — it routes traffic off local network |
+| App needs refresh | Close and reopen the app, or tap "Refresh" |
+
+### Enabling Android TV Remote Service
+
+On some devices, the **Android TV Remote Service** may be disabled by default or may have been turned off by a system update. To enable it:
+
+1. Go to **Settings** on your TV
+2. Navigate to **Apps → See All Apps** (or **Manage Installed Apps**)
+3. Find **Android TV Remote Service**
+4. Ensure it is **Enabled** (not disabled or restricted)
+
+This service is the backbone of the Wi-Fi remote functionality — without it, no app can discover or connect to your TV.
+
+### Manual IP Connection
+
+If auto-discovery still fails, the app supports manual IP entry. Find your TV's IP address in **Settings → Network → Status** and enter it directly in the app. This bypasses discovery and connects directly.
+
+---
+
+## Why Wi-Fi Is Better Than Bluetooth for TV Remote Control
+
+Many people assume Bluetooth is the go-to wireless standard, but for TV remote control, Wi-Fi wins in most scenarios:
+
+| Feature | Wi-Fi Remote | Bluetooth Remote |
+|---|---|---|
+| Range | 30+ meters (same network) | ~10 meters line-of-sight |
+| Pairing | One-time PIN | Re-pairs frequently |
+| Latency | Near-zero over LAN | 10–40ms typical |
+| Works through walls | Yes | Reduced performance |
+| Keyboard input | Full keyboard | Limited on most |
+| Setup complexity | Simple, automatic | Device-dependent |
+
+Because Wi-Fi remotes communicate over your local network rather than a direct radio link, walls and distance matter far less. You can control your TV from another room, which is genuinely useful for adjusting volume during ads.
+
+---
+
+## Recommended App: TV Remote for Android TV
+
+If you want the easiest, most privacy-respecting Wi-Fi remote control experience, check out [TV Remote for Android TV](/projects/android-tv-remote). It's open source, free of ads, and works with all Android TV and Google TV devices. The auto-discovery feature means you'll be up and running in under two minutes.
+
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) — no account needed, no tracking, just a clean remote control experience.
+
+</BlogLayout>

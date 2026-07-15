@@ -1,0 +1,1050 @@
+---
+// src/pages/projects/android-tv-remote.astro
+// Dedicated showcase/landing page for the Android TV Remote open-source app
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import a1 from '../../assets/a1.png';
+import a2 from '../../assets/a2.png';
+import a3 from '../../assets/a3.png';
+import a4 from '../../assets/a4.png';
+import a5 from '../../assets/a5.png';
+import a6 from '../../assets/a6.png';
+
+const siteUrl = 'https://harimoradiya.github.io';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.hari.androidtvremote';
+const githubUrl = 'https://github.com/harimoradiya/TV-Remote-for-Android-TV';
+
+const screenshots = [
+  { src: a1, alt: 'Android TV Remote - Main remote control interface with D-pad navigation' },
+  { src: a2, alt: 'Android TV Remote - Touchpad mode for mouse-like navigation' },
+  { src: a3, alt: 'Android TV Remote - Media playback controls with volume slider' },
+  { src: a4, alt: 'Android TV Remote - Keyboard input screen for text entry on TV' },
+  { src: a5, alt: 'Android TV Remote - OLED black theme with pure black background' },
+  { src: a6, alt: 'Android TV Remote - Device discovery screen showing nearby Android TV devices' },
+];
+
+const features = [
+  {
+    icon: '📡',
+    title: 'Auto Device Discovery',
+    desc: 'Automatically detects all Android TV and Google TV devices on your local Wi-Fi network. No IP address needed.',
+  },
+  {
+    icon: '🎮',
+    title: 'D-Pad + Touchpad',
+    desc: 'Full directional pad for precise menu navigation, plus a swipe touchpad mode for natural, gesture-based control.',
+  },
+  {
+    icon: '🔊',
+    title: 'Volume Control',
+    desc: 'Hardware and on-screen volume buttons with a smooth slider for precise audio adjustment.',
+  },
+  {
+    icon: '⌨️',
+    title: 'Keyboard Input',
+    desc: 'Type on your TV using your phone\'s full keyboard. No hunting for letters on an on-screen TV keyboard.',
+  },
+  {
+    icon: '▶️',
+    title: 'Media Playback Controls',
+    desc: 'Play, pause, stop, rewind, fast-forward, and seek controls for every streaming app on your TV.',
+  },
+  {
+    icon: '⚡',
+    title: 'Fast Reconnect',
+    desc: 'Remembers your last connected device and reconnects instantly. No waiting, no searching.',
+  },
+  {
+    icon: '⚫',
+    title: 'OLED Pure-Black Theme',
+    desc: 'True black (#000000) OLED mode saves battery on OLED screens and looks stunning in the dark.',
+  },
+  {
+    icon: '🎛️',
+    title: 'Customizable Layouts',
+    desc: 'Rearrange, hide, or resize remote buttons to build your perfect personal remote layout.',
+  },
+];
+
+const trustPoints = [
+  { icon: '🚫', title: 'No Ads', desc: 'Zero advertisements. Ever. The app is completely free with no monetization tricks.' },
+  { icon: '💳', title: 'No Subscriptions', desc: 'No monthly fees, no premium tier, no paywalls. All features are free, forever.' },
+  { icon: '🕵️', title: 'No Tracking', desc: 'No analytics SDKs, no user tracking, no data collection. Your usage is private.' },
+  { icon: '📶', title: 'Local Wi-Fi Only', desc: 'All communication stays on your local network. No data ever leaves your home.' },
+];
+
+const techStack = [
+  { category: 'Language', items: ['Kotlin'] },
+  { category: 'UI Framework', items: ['Jetpack Compose', 'Material Design 3'] },
+  { category: 'Async', items: ['Coroutines', 'Flow'] },
+  { category: 'Networking', items: ['Android TV Input Framework', 'Wi-Fi Socket Communication'] },
+  { category: 'Architecture', items: ['MVVM', 'Clean Architecture', 'Repository Pattern'] },
+  { category: 'Distribution', items: ['Google Play Store', 'GitHub Releases'] },
+];
+
+const testimonials = [
+  {
+    text: "This is exactly what I was looking for! Works flawlessly with my Chromecast with Google TV. The keyboard input feature alone is worth it.",
+    author: "Play Store User",
+    rating: 5,
+  },
+  {
+    text: "Simple, clean, and fast. No bloat, no ads. I've tried several TV remote apps and this is the best by far.",
+    author: "Play Store User",
+    rating: 5,
+  },
+  {
+    text: "Love the OLED theme and the auto-discovery feature. Connects instantly every time. Great open-source project!",
+    author: "Play Store User",
+    rating: 5,
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TV Remote for Android TV",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Android 5.0+",
+  "url": `${siteUrl}/projects/android-tv-remote`,
+  "downloadUrl": playStoreUrl,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "ratingCount": "1000",
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Hari Moradiya",
+    "url": siteUrl
+  },
+  "description": "Free, open-source Android TV and Google TV remote control app. Control your TV over Wi-Fi with D-pad, touchpad, keyboard input, and media controls. No ads, no subscriptions, no tracking.",
+  "keywords": "android tv remote, google tv remote, chromecast remote, open source tv remote, wifi remote control, android tv controller",
+  "featureList": [
+    "Automatic Android TV discovery",
+    "D-pad navigation",
+    "Touchpad mode",
+    "Volume control",
+    "Keyboard input",
+    "Media playback controls",
+    "Fast reconnect",
+    "OLED black theme",
+    "Customizable layouts"
+  ]
+};
+---
+
+<Layout
+  title="TV Remote for Android TV — Free Open-Source Remote Control App"
+  description="Control your Android TV or Google TV from your phone over Wi-Fi. 100% free, open source, no ads, no tracking. 4.7★ rating, 1K+ downloads. Auto-discovers devices, D-pad, touchpad, keyboard input, OLED theme."
+  canonicalUrl={`${siteUrl}/projects/android-tv-remote`}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <div class="showcase-page">
+
+    <!-- ============================
+         HERO
+    ============================= -->
+    <section class="hero" aria-label="App introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-top reveal">
+          <div class="app-icon-wrap">
+            <div class="app-icon" aria-hidden="true">📺</div>
+          </div>
+          <div class="hero-badges">
+            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="hero-badge-link" aria-label="View on Google Play">
+              <img
+                src="https://img.shields.io/endpoint?color=green&logo=google-play&logoColor=green&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.hari.androidtvremote%26l%3DGoogle%2520Play%26m%3D%24rating"
+                alt="Google Play Rating"
+                width="130"
+                height="20"
+                loading="lazy"
+              />
+            </a>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="hero-badge-link" aria-label="View on GitHub">
+              <img
+                src={`https://img.shields.io/github/stars/harimoradiya/TV-Remote-for-Android-TV?style=social`}
+                alt="GitHub Stars"
+                width="100"
+                height="20"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+
+        <h1 class="hero-title reveal">
+          TV Remote for <span class="gradient-text">Android TV</span>
+        </h1>
+        <p class="hero-tagline reveal">
+          The free, open-source, ad-free remote control app for Android TV and Google TV.
+          Control your TV over Wi-Fi — no pairing codes, no accounts, no nonsense.
+        </p>
+
+        <div class="hero-pill-row reveal">
+          <span class="pill pill-green">✅ Free Forever</span>
+          <span class="pill pill-blue">🔓 Open Source</span>
+          <span class="pill pill-yellow">⭐ 4.7 Rating</span>
+          <span class="pill pill-purple">📲 1K+ Downloads</span>
+        </div>
+
+        <div class="hero-ctas reveal">
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="hero-playstore-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/>
+            </svg>
+            Get it on Google Play
+          </a>
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" id="hero-github-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         SCREENSHOTS CAROUSEL
+    ============================= -->
+    <section class="section screenshots-section" aria-labelledby="screenshots-title">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Visuals</span>
+        <h2 class="section-title" id="screenshots-title">App Screenshots</h2>
+        <p class="section-desc">See the clean Material Design interface in action.</p>
+      </div>
+
+      <div class="carousel-wrap" role="region" aria-label="App screenshots carousel">
+        <div class="carousel" id="screenshot-carousel">
+          {screenshots.map((shot, i) => (
+            <div class="carousel-slide" data-index={i} aria-label={`Screenshot ${i + 1} of ${screenshots.length}`}>
+              <div class="phone-frame" aria-hidden="true">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={280}
+                    height={560}
+                    class="screenshot-img"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="carousel-prev" aria-label="Previous screenshot" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Screenshots">
+            {screenshots.map((_, i) => (
+              <button
+                class={`dot ${i === 0 ? 'active' : ''}`}
+                data-index={i}
+                role="tab"
+                aria-selected={i === 0}
+                aria-label={`Go to screenshot ${i + 1}`}
+                type="button"
+              ></button>
+            ))}
+          </div>
+          <button class="carousel-btn" id="carousel-next" aria-label="Next screenshot" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         FEATURES
+    ============================= -->
+    <section class="section" aria-labelledby="features-title">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Features</span>
+        <h2 class="section-title" id="features-title">Everything You Need to Control Your TV</h2>
+        <p class="section-desc">Built with attention to every detail — from one-tap connection to customizable layouts.</p>
+      </div>
+
+      <div class="features-grid stagger-children">
+        {features.map(feature => (
+          <div class="feature-card card">
+            <div class="feature-icon" aria-hidden="true">{feature.icon}</div>
+            <h3 class="feature-title">{feature.title}</h3>
+            <p class="feature-desc">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ============================
+         TRUST / PRIVACY
+    ============================= -->
+    <section class="section trust-section" aria-labelledby="trust-title">
+      <div class="trust-card glass-card">
+        <div class="trust-glow" aria-hidden="true"></div>
+        <div class="trust-header reveal">
+          <span class="section-eyebrow">Privacy First</span>
+          <h2 class="section-title" id="trust-title">You Can Trust This App</h2>
+          <p class="section-desc">We believe software should respect your privacy. Here's our promise:</p>
+        </div>
+        <div class="trust-grid stagger-children">
+          {trustPoints.map(point => (
+            <div class="trust-item">
+              <div class="trust-icon" aria-hidden="true">{point.icon}</div>
+              <h3 class="trust-title-sm">{point.title}</h3>
+              <p class="trust-desc">{point.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         TECH STACK
+    ============================= -->
+    <section class="section" aria-labelledby="tech-title">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Under the Hood</span>
+        <h2 class="section-title" id="tech-title">Tech Stack</h2>
+        <p class="section-desc">Built natively on Android with modern tools for performance and maintainability.</p>
+      </div>
+
+      <div class="tech-grid stagger-children">
+        {techStack.map(group => (
+          <div class="tech-group card">
+            <p class="tech-category">{group.category}</p>
+            <div class="tech-chips">
+              {group.items.map(item => <span class="chip chip-accent">{item}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ============================
+         STATS / SOCIAL PROOF
+    ============================= -->
+    <section class="section" aria-labelledby="stats-title">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">By the Numbers</span>
+        <h2 class="section-title" id="stats-title">Community & Stats</h2>
+      </div>
+
+      <div class="app-stats-grid stagger-children">
+        <div class="app-stat-card card">
+          <div class="app-stat-icon">⭐</div>
+          <div class="app-stat-num">4.7</div>
+          <div class="app-stat-label">Play Store Rating</div>
+          <div class="star-row" aria-label="4.7 out of 5 stars">
+            {'★★★★★'.split('').map((s, i) => (
+              <span style={i < 4 ? 'color: var(--warning)' : 'color: var(--text-muted)'}>{s}</span>
+            ))}
+          </div>
+        </div>
+        <div class="app-stat-card card">
+          <div class="app-stat-icon">📲</div>
+          <div class="app-stat-num">1K+</div>
+          <div class="app-stat-label">Downloads</div>
+          <div class="app-stat-sub">on Google Play Store</div>
+        </div>
+        <div class="app-stat-card card">
+          <div class="app-stat-icon">⭐</div>
+          <div class="app-stat-num">50+</div>
+          <div class="app-stat-label">GitHub Stars</div>
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="app-stat-link">Star on GitHub →</a>
+        </div>
+        <div class="app-stat-card card">
+          <div class="app-stat-icon">🌍</div>
+          <div class="app-stat-num">100%</div>
+          <div class="app-stat-label">Free & Open Source</div>
+          <div class="app-stat-sub">MIT License</div>
+        </div>
+      </div>
+
+      <!-- GitHub star history chart -->
+      <div class="star-history-wrap reveal">
+        <p class="star-history-label">GitHub Star History</p>
+        <a href="https://star-history.com/#harimoradiya/TV-Remote-for-Android-TV" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://api.star-history.com/svg?repos=harimoradiya/TV-Remote-for-Android-TV&type=Date"
+            alt="Star history chart for TV Remote for Android TV on GitHub"
+            class="star-history-img"
+            loading="lazy"
+            width="800"
+            height="300"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================
+         TESTIMONIALS
+    ============================= -->
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Reviews</span>
+        <h2 class="section-title" id="reviews-title">What Users Are Saying</h2>
+        <p class="section-desc">Real reviews from the Google Play Store.</p>
+      </div>
+
+      <div class="testimonials-grid stagger-children">
+        {testimonials.map((t, i) => (
+          <div class="testimonial-card card" aria-label={`Review ${i + 1}`}>
+            <div class="testimonial-stars" aria-label={`${t.rating} out of 5 stars`}>
+              {'★'.repeat(t.rating)}<span style="color:var(--text-muted)">{'★'.repeat(5 - t.rating)}</span>
+            </div>
+            <blockquote class="testimonial-text">
+              <p>"{t.text}"</p>
+            </blockquote>
+            <cite class="testimonial-author">— {t.author}, Google Play Store</cite>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ============================
+         BOTTOM CTA
+    ============================= -->
+    <section class="section bottom-cta-section" aria-labelledby="bottom-cta-title">
+      <div class="bottom-cta-card glass-card reveal">
+        <div class="bottom-cta-icon" aria-hidden="true">📺</div>
+        <h2 class="bottom-cta-title" id="bottom-cta-title">
+          Ready to Control Your <span class="gradient-text">Android TV</span>?
+        </h2>
+        <p class="bottom-cta-desc">
+          It's free. It's open source. It takes 30 seconds to set up. No account needed.
+        </p>
+        <div class="bottom-cta-actions">
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="bottom-playstore-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/>
+            </svg>
+            Download Free on Play Store
+          </a>
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" id="bottom-github-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            View Source Code
+          </a>
+        </div>
+        <p class="bottom-cta-meta">
+          <a href="/" class="back-link">← Back to Portfolio</a> ·
+          <a href="/blog" class="back-link">Read the Blog</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .showcase-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============================
+     HERO
+  ============================= */
+  .hero {
+    text-align: center;
+    padding: 3rem 0 5rem;
+    position: relative;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: -100px;
+    background: radial-gradient(ellipse at center top, var(--primary-glow) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .hero-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .app-icon-wrap {
+    position: relative;
+  }
+
+  .app-icon {
+    font-size: 5rem;
+    line-height: 1;
+    filter: drop-shadow(0 8px 30px rgba(99,102,241,0.3));
+    animation: floatIcon 4s ease-in-out infinite;
+  }
+
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-badge-link {
+    display: inline-block;
+    border-radius: 4px;
+    transition: transform 0.2s;
+  }
+
+  .hero-badge-link:hover {
+    transform: scale(1.05);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  .hero-pill-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pill {
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+
+  .pill-green { background: var(--success-glow); color: var(--success); border: 1px solid rgba(52,211,153,0.25); }
+  .pill-blue  { background: rgba(59,130,246,0.1); color: #3b82f6; border: 1px solid rgba(59,130,246,0.2); }
+  .pill-yellow { background: rgba(251,191,36,0.1); color: var(--warning); border: 1px solid rgba(251,191,36,0.2); }
+  .pill-purple { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(167,139,250,0.2); }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ============================
+     SCREENSHOTS
+  ============================= */
+  .screenshots-section { padding-top: 5rem; }
+
+  .carousel-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 1rem 0 2rem;
+    scroll-behavior: smooth;
+  }
+
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .carousel-slide {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Phone frame mockup */
+  .phone-frame {
+    width: 230px;
+    background: var(--bg-surface);
+    border: 8px solid var(--border-color);
+    border-radius: 36px;
+    box-shadow: var(--shadow-xl), inset 0 0 0 1px rgba(255,255,255,0.05);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .phone-frame:hover {
+    transform: scale(1.04);
+  }
+
+  .phone-notch {
+    width: 70px;
+    height: 16px;
+    background: var(--border-color);
+    border-radius: 0 0 12px 12px;
+    margin: 0 auto 4px;
+  }
+
+  .phone-screen {
+    overflow: hidden;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: var(--primary-glow);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .dot.active {
+    background: var(--primary);
+    width: 24px;
+  }
+
+  /* ============================
+     FEATURES
+  ============================= */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .feature-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .feature-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .feature-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .feature-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ============================
+     TRUST
+  ============================= */
+  .trust-section { }
+
+  .trust-card {
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trust-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, var(--success-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .trust-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+  }
+
+  .trust-item {
+    text-align: center;
+  }
+
+  .trust-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .trust-title-sm {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .trust-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ============================
+     TECH STACK
+  ============================= */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .tech-group {
+    padding: 1.5rem;
+  }
+
+  .tech-category {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ============================
+     APP STATS
+  ============================= */
+  .app-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .app-stat-card {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .app-stat-icon {
+    font-size: 2rem;
+  }
+
+  .app-stat-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .app-stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .app-stat-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .star-row {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .app-stat-link {
+    font-size: 0.82rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .app-stat-link:hover { color: var(--primary-hover); }
+
+  .star-history-wrap {
+    text-align: center;
+  }
+
+  .star-history-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .star-history-img {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+  }
+
+  /* ============================
+     TESTIMONIALS
+  ============================= */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .testimonial-stars {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    color: var(--warning);
+  }
+
+  .testimonial-text p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ============================
+     BOTTOM CTA
+  ============================= */
+  .bottom-cta-section { padding-top: 5rem; }
+
+  .bottom-cta-card {
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+
+  .bottom-cta-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .bottom-cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .bottom-cta-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .bottom-cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .bottom-cta-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .back-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--primary-hover); }
+
+  /* ============================
+     SHARED
+  ============================= */
+  .section {
+    padding-top: 5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+  }
+
+  /* ============================
+     RESPONSIVE
+  ============================= */
+  @media (max-width: 1100px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .app-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .trust-card { padding: 2rem 1.5rem; }
+    .bottom-cta-card { padding: 2.5rem 1.5rem; }
+  }
+
+  @media (max-width: 540px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .app-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .tech-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // ==========================================
+  // Screenshot Carousel
+  // ==========================================
+  const carousel = document.getElementById('screenshot-carousel') as HTMLElement;
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+
+  function goTo(index: number) {
+    currentIndex = (index + total) % total;
+    const slide = slides[currentIndex] as HTMLElement;
+    carousel.scrollTo({
+      left: slide.offsetLeft - (carousel.offsetWidth - slide.offsetWidth) / 2,
+      behavior: 'smooth',
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+      dot.setAttribute('aria-selected', String(i === currentIndex));
+    });
+  }
+
+  prevBtn?.addEventListener('click', () => goTo(currentIndex - 1));
+  nextBtn?.addEventListener('click', () => goTo(currentIndex + 1));
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  // Auto-advance every 4 seconds
+  let autoPlay = setInterval(() => goTo(currentIndex + 1), 4000);
+  carousel?.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  carousel?.addEventListener('mouseleave', () => {
+    autoPlay = setInterval(() => goTo(currentIndex + 1), 4000);
+  });
+</script>

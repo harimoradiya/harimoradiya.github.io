@@ -1,0 +1,155 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Best Free Android TV Remote Apps in 2025 (Compared)"
+  description="We compared the top free Android TV remote control apps available on the Play Store in 2025 — looking at features, privacy, ads, and ease of use."
+  pubDate="2025-01-25"
+  readingTime="8 min read"
+  slug="best-free-android-tv-remote-apps"
+  tags={["Android TV", "App Comparison", "Remote Apps", "Free Apps"]}
+>
+
+## The Problem with "Free" Remote Apps
+
+Search "Android TV remote" on the Play Store and you'll find dozens of apps. Most claim to be free. Some are genuinely useful; others are designed primarily to show you ads, collect your usage data, or nudge you toward an unnecessary subscription. With a TV remote — an app you open constantly during your leisure time — the difference between a clean, no-nonsense experience and one littered with interstitial ads is significant.
+
+This comparison cuts through the noise. We evaluated five popular Android TV remote apps across the metrics that actually matter: core functionality, privacy, ads, open source transparency, and ease of use. Here's what we found.
+
+---
+
+## Evaluation Criteria
+
+Before diving into the comparison, here's what we looked at for each app:
+
+- **Auto-discovery**: Does it find your TV automatically, or do you need to enter an IP address?
+- **D-pad navigation**: Is there a proper directional pad for focus-based UI navigation?
+- **Touchpad mode**: Can you use swipe gestures as a mouse-like pointer?
+- **Full keyboard**: Can you type on your TV directly from the phone keyboard?
+- **Ads**: Does the free version show ads? How intrusive are they?
+- **Open source**: Is the code publicly available for inspection?
+- **Privacy**: Does the app collect usage data or phone home to external servers?
+- **Price**: Is the core functionality truly free, or gated behind a paywall?
+
+---
+
+## App Comparison Table
+
+| Feature | TV Remote for Android TV | AnyMote | Remote for Android TV | CetusPlay | Unified Remote |
+|---|---|---|---|---|---|
+| Auto-discovery | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| D-pad navigation | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| Touchpad mode | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| Full keyboard | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Limited |
+| Ads | ❌ None | ⚠️ Banner | ⚠️ Interstitial | ⚠️ Banner | ⚠️ Banner |
+| Open source | ✅ MIT | ❌ No | ❌ No | ❌ No | ❌ No |
+| Privacy | ✅ No tracking | ⚠️ Analytics | ⚠️ Analytics | ⚠️ Analytics | ⚠️ Analytics |
+| Price | Free | Free / $4.99 Pro | Free / Subscription | Free / $2.99 | Free / $3.99 |
+
+---
+
+## App-by-App Breakdown
+
+### 1. TV Remote for Android TV — Best Overall
+
+This is the app we built, and we're going to be upfront about that. But our bias doesn't change the facts: it's the only app in this list that is fully open source under the MIT license, completely free with zero ads, and has a verified no-tracking privacy policy.
+
+The app uses the Android TV Remote Protocol, the same API Google uses for its own remote app. Auto-discovery works instantly on any network where mDNS is not blocked. The D-pad is large and responsive, the keyboard opens in one tap, and there's no account sign-up.
+
+**Strengths:** Open source, no ads, no tracking, clean UI  
+**Weaknesses:** Currently Android-only (no iOS version)
+
+👉 [Download from Play Store](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) | [See the project](/projects/android-tv-remote)
+
+---
+
+### 2. AnyMote
+
+AnyMote is a versatile remote app that supports a wide range of devices beyond just Android TV — it includes IR blaster support for older TVs. The free version works, but banner ads appear at the bottom of the screen throughout your session. For a TV remote that you use in a dark room, a glowing banner at the bottom of your phone screen is genuinely annoying.
+
+The Pro version at $4.99 removes ads. Analytics are enabled by default in both versions. There's no public source code.
+
+**Strengths:** IR blaster support, broad device compatibility  
+**Weaknesses:** Ads in free version, closed source, analytics
+
+---
+
+### 3. Remote for Android TV (Various Publishers)
+
+There are several apps with this generic name on the Play Store, most from smaller developers. Quality varies widely. The most downloaded version shows interstitial ads — full-screen pop-ups — after you perform certain actions. If you hit "Back" on the TV and an interstitial fires, you've lost the moment entirely.
+
+Some versions are functional enough for basic use, but none are open source, and their privacy policies are vague about data collection.
+
+**Strengths:** Usually works for basic navigation  
+**Weaknesses:** Interstitial ads, vague privacy, no open source
+
+---
+
+### 4. CetusPlay
+
+CetusPlay is a polished app with a focus on sharing videos and files to your TV, in addition to remote control. The remote functionality itself is solid — good D-pad, keyboard, and even a voice input feature. The free version shows banner ads, and the Pro upgrade at $2.99 removes them.
+
+It collects usage analytics to improve the product, which is disclosed in its privacy policy. The app is not open source.
+
+**Strengths:** File sharing features, good UI design  
+**Weaknesses:** Banner ads, not open source, analytics collected
+
+---
+
+### 5. Unified Remote
+
+Unified Remote is primarily a PC remote control app that also supports Android TV as one of many server targets. It requires installing a server application on a computer, which adds complexity most people don't want just to control their TV. The Android TV remote features work, but they feel secondary to the app's main purpose.
+
+The keyboard is limited in the free version, which is a notable drawback for a feature that should be standard.
+
+**Strengths:** Great for PC remote control, multi-device  
+**Weaknesses:** Requires PC server install, limited keyboard free tier, not purpose-built for Android TV
+
+---
+
+## What Does "Free" Actually Mean?
+
+In mobile app economics, "free" rarely means what you think it means. When an app has no price tag but still generates revenue, that revenue comes from somewhere:
+
+1. **Ads** — You pay with your attention. Banner ads are mild; interstitial ads are aggressive.
+2. **Data collection** — Your usage patterns, device info, and IP address may be sold to data brokers or used to build ad profiles.
+3. **Feature gating** — Core features are free but useful features are paywalled, creating pressure to upgrade.
+4. **A future pivot** — The app is free now, but the business model may change once you're locked in.
+
+The only sustainable "free" model for a remote app that respects you is open source with community support. When the code is public, there's no hidden monetization — anyone can verify that.
+
+---
+
+## What to Look For in an Android TV Remote App
+
+### Must-Have Features
+
+- **Reliable auto-discovery** — You shouldn't need to type IP addresses
+- **Low latency** — Control should feel instant, not sluggish
+- **Full keyboard** — Essential for searching on YouTube, Netflix, etc.
+- **D-pad and media controls** — The basics that every remote needs
+
+### Nice-to-Have Features
+
+- **Touchpad mode** — Useful for navigating web browser apps on TV
+- **Customizable layout** — Rearrange buttons to suit your habits
+- **OLED dark theme** — Saves battery, looks great in a dark room
+- **No ads** — Especially important for nighttime use
+
+### Red Flags to Avoid
+
+- Interstitial ads between actions
+- Required account creation just to use the remote
+- Vague or absent privacy policies
+- No GitHub or public repository link
+
+---
+
+## Our Recommendation: TV Remote for Android TV
+
+After comparing all options, the winner is clear — especially if privacy and a clean experience matter to you. [TV Remote for Android TV](/projects/android-tv-remote) is completely free, contains no ads, collects no data, and is open source under the MIT license. It works with all Android TV and Google TV devices via Wi-Fi auto-discovery.
+
+[Download it from the Play Store](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) and see the difference a truly free, open source remote makes.
+
+</BlogLayout>

@@ -1,0 +1,149 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Why Open Source Android TV Remote Apps Are Better"
+  description="Open source TV remote apps offer transparency, privacy, and no hidden ads. Here's why you should choose an open source Android TV remote and what to look for."
+  pubDate="2025-03-12"
+  readingTime="6 min read"
+  slug="open-source-android-tv-remote-review"
+  tags={["Open Source", "Privacy", "Android TV", "App Review"]}
+>
+
+## What Does "Open Source" Actually Mean?
+
+Open source software is software whose **source code is publicly available** for anyone to read, inspect, modify, and distribute. The code that makes the app work — every function, every network request, every data point collected — is visible.
+
+For an app to legitimately claim "open source," it needs:
+
+1. **A public code repository** — typically hosted on GitHub, GitLab, or Codeberg
+2. **A recognized open source license** — such as MIT, Apache 2.0, or GPL
+3. **The actual current source code** matching the published app — not an old snapshot
+
+The **MIT license**, one of the most permissive open source licenses, allows anyone to use, copy, modify, merge, publish, distribute, and sublicense the code freely. The only requirement is that the original license notice is included. This is the license used by TV Remote for Android TV.
+
+Open source is fundamentally different from "freeware" (free to download but closed source) or "source available" (code is visible but not freely modifiable). Only true open source gives you the full set of rights and transparency guarantees.
+
+---
+
+## Why Open Source Matters for a Remote Control App
+
+A TV remote app might seem like a low-stakes piece of software. But consider what it does:
+
+- It's always running in the background (or called frequently) when you're at home
+- It connects to your local network
+- It may send keyboard input, including passwords and usernames typed on your TV
+- It knows your TV's IP address and device name
+- It may know when you're home vs. away, based on connection patterns
+
+This is actually a significant amount of sensitive information. A remote app with hidden telemetry could, in principle, log every TV session, every keystroke sent to your TV (including passwords), and every device it discovers on your network.
+
+With a closed-source app, you simply cannot verify that this isn't happening. You're trusting the developer's word and their privacy policy — a document that can be updated at any time.
+
+With an open source app, **you can check the code yourself**. Or rely on the community to check it for you.
+
+---
+
+## How to Verify an App's Open Source Claim
+
+Not every app that says "open source" truly is. Here's how to do due diligence:
+
+### Step 1: Find the GitHub Repository
+
+The app's Play Store listing or website should link to its GitHub repository. Look for a link in the app description, the developer's website, or the "About" section within the app. If there's no GitHub link anywhere, that's a red flag.
+
+### Step 2: Check the License File
+
+In the repository, look for a file named `LICENSE` or `LICENSE.md` in the root directory. It should contain the full text of a recognized open source license (MIT, Apache 2.0, GPL, LGPL, etc.).
+
+### Step 3: Verify the Code Matches the App's Version
+
+Check the latest commit date and version tags. A repository that hasn't been updated in years while the Play Store app shows recent updates may be showing you outdated or incomplete source.
+
+### Step 4: Search for Network Calls
+
+In the repository, search for code related to analytics, tracking, or external API calls:
+
+- Search for `analytics`, `firebase`, `amplitude`, `mixpanel`, `segment`
+- Search for any URLs pointing to external servers (not your local TV)
+- Check for permissions in `AndroidManifest.xml` that seem excessive
+
+If the code is clean — only making local network calls to your TV — that's the gold standard.
+
+### Step 5: Check the Privacy Policy
+
+The privacy policy should match what you see in the code. An open source app with a clear "we collect no data" privacy policy that's confirmed by the code is trustworthy. Vague policies like "we may share data with third parties" are warning signs.
+
+---
+
+## Free vs. Open Source: An Important Distinction
+
+People often conflate "free" (no cost) with "open source." They are different:
+
+| | Free (Freeware) | Open Source |
+|---|---|---|
+| Cost | $0 | Usually $0 |
+| Code visible? | ❌ No | ✅ Yes |
+| Can modify? | ❌ No | ✅ Yes |
+| Can redistribute? | ❌ No | ✅ Yes |
+| Verified no tracking? | ❌ No | ✅ Verifiable |
+| Community contributions | ❌ No | ✅ Yes |
+
+A "free" app with closed source code can:
+- Show ads (and keep all revenue)
+- Collect data and sell it to data brokers
+- Change its business model at any time
+- Disappear from the Play Store with no recourse
+
+An open source app, even if its Play Store version disappears, has its code preserved. The community can fork it, maintain it, and redistribute it.
+
+---
+
+## Community Contributions: How Open Source Improves Over Time
+
+When source code is public, anyone who uses the app can become a contributor:
+
+- A user notices a bug → opens an issue on GitHub → the developer (or another community member) fixes it
+- A developer in another country needs the app in their language → submits a translation pull request
+- A user with a specific TV model (e.g., a Hisense model with quirky behavior) → submits a bug fix for that model
+- A security researcher finds a potential vulnerability → responsibly discloses it on GitHub → it gets patched quickly
+
+This crowdsourced improvement model is one of the key reasons open source software tends to be higher quality than closed-source alternatives over time. Problems are discovered and fixed faster. Features that matter to users get added.
+
+---
+
+## TV Remote for Android TV: Open Source Under MIT License
+
+[TV Remote for Android TV](/projects/android-tv-remote) is open source under the **MIT License**. The repository is publicly available on GitHub, where you can:
+
+- Read every line of code
+- Verify that it makes no external network requests (all communication is local, between your phone and your TV)
+- Check that no analytics SDKs are included
+- See the full history of changes and improvements
+- Submit issues if you find bugs
+- Submit pull requests if you have improvements
+
+The app has no ads, no account sign-up, no data collection, and no subscription. It's a genuine open source project built for Android TV and Google TV remote control.
+
+---
+
+## What Open Source Doesn't Guarantee
+
+To be balanced: open source is not a magic bullet. There are a few caveats:
+
+- **Anyone can read the code, but most users won't** — the protection is theoretical unless trusted community members have actually audited the code
+- **Binary builds can differ from source** — the APK on the Play Store is compiled from the source, but in theory they could differ. Apps published on F-Droid are reproducibly built from source, which closes this gap.
+- **Licenses can change** — a project could relicense in the future, though past versions remain under the original license
+
+Despite these caveats, open source provides vastly more trust than closed source for privacy-sensitive apps.
+
+---
+
+## Recommended: TV Remote for Android TV
+
+If privacy and transparency matter to you, [TV Remote for Android TV](/projects/android-tv-remote) is the right choice. MIT licensed, publicly auditable, no ads, no tracking — and it works with all Android TV and Google TV devices via Wi-Fi auto-discovery.
+
+[Download it free on Google Play](https://play.google.com/store/apps/details?id=com.hari.androidtvremote) — and check the source code yourself if you want to be sure.
+
+</BlogLayout>
