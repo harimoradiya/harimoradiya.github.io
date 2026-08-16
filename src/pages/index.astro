@@ -1,488 +1,161 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const featuredProjects = [
+  {
+    title: 'Android TV Remote',
+    category: 'Android App',
+    excerpt: 'Seamless, open-source TV remote control for Android devices with low-latency sockets and zero ads.',
+    techStack: 'Kotlin, Native Android TV, Sockets',
+    url: '/projects/android-tv-remote',
+    specs: ['100% Free', 'Open Source', 'No Ads', 'No IAP'],
+    featured: true,
+  },
+  {
+    title: 'Wifi Remote for Android TV',
+    category: 'iOS App',
+    excerpt: 'Turn your iPhone or iPad into a powerful remote control for Android TV with trackpad gestures & keyboard input.',
+    techStack: 'Flutter, iOS, WebSockets',
+    url: '/projects/wifi-remote-ios',
+    specs: ['Built with Flutter', 'Closed Source', 'Contains Ads', 'Offers IAP (Freemium)'],
+    featured: true,
+  },
+  {
+    title: 'RMS (Restaurant Management System)',
+    category: 'Backend REST API',
+    excerpt: 'High-throughput server-side REST API built with Kotlin Ktor, PostgreSQL, Exposed ORM, and Docker.',
+    techStack: 'Kotlin, Ktor, PostgreSQL, Docker',
+    url: 'https://github.com/harimoradiya/rms',
+    specs: ['Open Source', 'Backend'],
+    featured: false,
+  },
+  {
+    title: 'WearOS Stopwatch',
+    category: 'WearOS App',
+    excerpt: 'Minimalist, battery-efficient lap timer and stopwatch application designed specifically for Wear OS smartwatches.',
+    techStack: 'Kotlin, Jetpack Compose, Wear OS',
+    url: 'https://github.com/harimoradiya/WearOS-Stopwatch',
+    specs: ['100% Free', 'Open Source'],
+    featured: false,
+  },
+  {
+    title: 'Network Discovery Protocol',
+    category: 'Android Library',
+    excerpt: 'Automated mDNS & local network discovery utility to locate smart devices connected on local Wi-Fi.',
+    techStack: 'Kotlin, Coroutines, Flow, NSD',
+    url: 'https://github.com/harimoradiya/Network-Discovery',
+    specs: ['Open Source'],
+    featured: false,
+  },
+  {
+    title: 'Background Remover App',
+    category: 'Android & Computer Vision',
+    excerpt: 'On-device image background segmentation app leveraging on-device ML vision processing.',
+    techStack: 'Kotlin, ML Kit, OpenCV',
+    url: 'https://github.com/harimoradiya/Background-Remover-App',
+    specs: ['Open Source'],
+    featured: false,
+  },
+];
 
 const skills = [
-  { name: "Android Development", level: 90 },
-  { name: "Kotlin", level: 85 },
-  { name: "Java", level: 85 },
-  { name: "Material Design", level: 88 },
-  { name: "Python", level: 85 },
-];
-const experiences = [
-   
-    {
-        title: "Software Engineer",
-        company: "Vasuka",
-        period: "2022",
-        description: "Developed and maintained multiple Android applications using Kotlin and Java."
-    }
+  'Android Development',
+  'Kotlin & Java',
+  'Jetpack Compose',
+  'Flutter (iOS/Android)',
+  'Sockets & Network Protocols',
+  'Ktor Backend',
+  'Wear OS',
+  'Material Design',
 ];
 
-const projects = [
-  {
-    title: "Direct Chat",
-    category: "Android & IOS ",
-    excerpt: "An application to save statuses from social media platforms.",
-    techStack: "Android, Kotlin",
-    url: "/"
-  },
-  {
-    title: "WiFi Mouse Remote",
-    category: "Android & Desktop",
-    excerpt: "Control your computer wirelessly from your Android device",
-    techStack: "Android, Java, Sockets, Compose  Multiplatform",
-    url: "/wifi-mouse"
-  },
-   {
-    title: "StatusSaver",
-    category: "Android App",
-    excerpt: "An application to save statuses from social media platforms.",
-    techStack: "Android, Kotlin",
-    url: "/direct-chat"
-  },
-  {
-    title: "Background-Remover-App",
-    category: "Android App & Backend",
-    excerpt: "An app to remove the background from images.",
-    techStack: "Android, Kotlin, Image Processing",
-    url: "https://github.com/harimoradiya/Background-Remover-App"
-  },
-  {
-    title: "Photomatch",
-    category: "Android App",
-    excerpt: "An app for matching photos based on certain criteria.",
-    techStack: "Android, Kotlin, Machine Learning",
-    url: "https://github.com/harimoradiya/Photomatch"
-  },
-{
-    title: "RMS",
-    category: "REST-API Backend",
-    excerpt: "Restaurant Management System API",
-    techStack: "Kotlin, Ktor, PostgreSQL, Exposed, Swagger UI, HikariCP, Docker",
-    url: "https://github.com/harimoradiya/rms",
-  },
-  {
-    title: "WearOS-Stopwatch",
-    category: "Android App",
-    excerpt: "About Stopwatch for Wear OS.",
-    techStack: "Kotlin, Jetpack compose, Material Design",
-    url: "https://github.com/harimoradiya/WearOS-Stopwatch",
-  },
-  {
-    title: "Network-Discovery",
-    category: "Android App",
-    excerpt: "Discover services which is connected to your network.",
-    techStack: "Android, Kotlin, Flow, Coroutine",
-    url: "https://github.com/harimoradiya/Network-Discovery",
-  },
-  {
-    title: "NewsRoom",
-    category: "Android App",
-    excerpt: "A Modern Android News App for Beginners MVVM",
-    techStake: "Android, Kotlin, Koin, Retrofit, MVVM",
-    url : "https://github.com/harimoradiya/NewsRoom"
-  },
-  {
-    title: "Staytune-Timely",
-    category: "Android App",
-    excerpt :  "Lecture scheduler Notification the day of the subjects by day (with selectable time)",
-    techStake : "Android, Java, SQL, Firebase",
-    url : "https://github.com/harimoradiya/Staytune-Timely/"
-  }
-];
-
-const socialLinks = [ 
-    {name: 'Resume', icon: '', url: 'https://drive.google.com/file/d/1N_zpQ09Z7lX21YmXd4Mj27x4h94fUa6X/view?usp=sharing'},  
-    { name: 'GitHub', icon: '', url: 'https://github.com/harimoradiya' },
-    { name: 'LinkedIn', icon: '', url: 'https://www.linkedin.com/in/hari-moradiya-0a7145179/' },
-    { name: 'Twitter', icon: '', url: 'https://twitter.com/hari_moradiya_' },
-    { name: 'Instagram', icon: '', url: 'https://instagram.com/hk_moradiya' }
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/harimoradiya' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hari-moradiya-0a7145179/' },
+  { label: 'Twitter', href: 'https://twitter.com/hari_moradiya_' },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/1SljlOBLyZcYdaP7txqFoFNiKs2yxgxhx/view?usp=sharing' },
 ];
 ---
 
-<Layout>
-  <div class="hero-section">
-    <div class="profile-card">
-      <div class="profile-image">HM</div>
-
-      <h1 class="typing-animation">Hello, I'm Hari Moradiya</h1>
-  
-      <p class="title animate-up-delay-1">Software Engineer</p>
-      <p class="subtitle animate-up-delay-2">Researching</p>
-      <div class="social-links animate-up-delay-2">
-        {socialLinks.map(link => (
-            <a href={link.url} target="_blank" rel="noopener noreferrer" class="social-link">
-                <span class="icon">{link.icon}</span>
-                <span class="name">{link.name}</span>
-            </a>
-        ))}
-    </div>
-    </div>
-  </div>
-
-  <section class="about-preview">
-    <h2 class="section-title animate-fade-in">About Me</h2>
-    <p class="about-text animate-fade-in-delay-1">
-    I,m software engineer, specializes in Android and backend development. With expertise in creating efficient mobile applications and robust server-side solutions, I am dedicated to delivering high-quality software products. My work is characterized by innovation and a commitment to excellence in technology.
-    </p>
-    
-    <!-- <div class="skills-container">
-      {skills.map((skill, index) => (
-        <div class="skill-bar animate-width" style={`--delay: ${index * 0.2}s`}>
-          <span class="skill-name">{skill.name}</span>
-          <div class="skill-progress">
-            <div class="skill-level" style={`width: ${skill.level}%`}></div>
-          </div>
+<Layout title="Hari Moradiya — Senior Android & Mobile Engineer">
+  <!-- Hero Section -->
+  <section class="py-6 sm:py-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-zinc-200/80 dark:border-zinc-800/80">
+      <div class="space-y-4 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Available for New Projects & Consultation</span>
         </div>
-      ))}
-    </div> -->
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">
+          Hi, I'm Hari Moradiya.
+        </h1>
+
+        <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
+          Senior Software Engineer specializing in <strong class="text-zinc-900 dark:text-zinc-100 font-semibold">Android, Flutter, and high-performance mobile systems</strong>. I build clean, ultra-responsive remote utilities, smart TV integrations, and backend services.
+        </p>
+
+        <!-- Social Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          {socialLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800/70 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 transition-colors"
+            >
+              <span>{link.label}</span>
+              <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Projects Section -->
-<section class="content-section animate-fade-in">
-  <h2 class="section-title">Projects</h2>
-  <div class="post-grid">
-    {projects.map((project, index) => (
-      <a href={project.url} class="post-card animate-up" style={`--delay: ${index * 0.2}s`}>
-        <div class="post-content">
-          <p class="post-category">{project.category}</p>
-          <h3 class="post-title">{project.title}</h3>
-          <p class="post-excerpt">{project.excerpt}</p>
-          <div class="post-meta">
-            <span>{project.techStack}</span>
-            <span class="read-more">Read More</span>
-          </div>
-        </div>
-      </a>
-    ))}
-  </div>
-</section>
+  <!-- Technical Stack Summary -->
+  <section class="py-6">
+    <h2 class="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-3">
+      Core Expertise & Technologies
+    </h2>
+    <div class="flex flex-wrap gap-2">
+      {skills.map((skill) => (
+        <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300">
+          {skill}
+        </span>
+      ))}
+    </div>
+  </section>
 
+  <!-- Projects Grid Section -->
+  <section class="py-10">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          Featured Applications & Projects
+        </h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+          Explore native mobile apps, open-source TV remote tools, and server architectures.
+        </p>
+      </div>
+    </div>
 
-
-
-        <!-- Experience Section -->
-        <section class="content-section animate-fade-in">
-          <h2 class="section-title">Experience</h2>
-          <div class="experience-timeline">
-              {experiences.map((exp, index) => (
-                  <div class="experience-card animate-up" style={`--delay: ${index * 0.2}s`}>
-                      <div class="experience-header">
-                          <h3 class="experience-title">{exp.title}</h3>
-                          <span class="experience-period">{exp.period}</span>
-                      </div>
-                      <p class="company-name">{exp.company}</p>
-                      <p class="experience-description">{exp.description}</p>
-                  </div>
-              ))}
-          </div>
-      </section>
-
-  <style>
-    /* Hero Section */
-    .hero-section {
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--primary-container), var(--surface-variant));
-      padding: 2rem;
-      margin: -2rem -2rem 2rem -2rem;
-    }
-
-    .profile-card {
-      background: var(--surface);
-      padding: 2rem;
-      border-radius: 24px;
-      box-shadow: var(--elevation-3);
-      text-align: center;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .profile-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 60px;
-      background: var(--primary);
-      color: var(--on-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin: 0 auto 1.5rem auto;
-    }
-
-    .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--primary-container);
-            color: var(--on-primary-container);
-            border-radius: 100px;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-        }
-
-    .title {
-      color: var(--primary);
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      color: var(--on-surface-variant);
-    }
-
-    .content-section {
-            padding: 3rem 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: var(--on-surface);
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .about-text {
-            color: var(--on-surface-variant);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .experience-timeline {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .experience-card {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--elevation-1);
-            border-left: 4px solid var(--primary);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-title {
-            color: var(--on-surface);
-            font-size: 1.25rem;
-        }
-
-        .experience-period {
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .company-name {
-            color: var(--on-surface-variant);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-description {
-            color: var(--on-surface-variant);
-            line-height: 1.6;
-        }
-    /* Skills Section */
-    .skills-container {
-      margin-top: 2rem;
-    }
-
-    .skill-bar {
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-name {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--on-surface);
-      font-weight: 500;
-    }
-
-    .skill-progress {
-      height: 8px;
-      background: var(--surface-variant);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .skill-level {
-      height: 100%;
-      background: var(--primary);
-      border-radius: 4px;
-      transform-origin: left;
-      animation: growWidth 1.5s ease-out forwards;
-    }
-
-    /* Post Grid */
-    .post-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .post-card {
-      background: var(--surface);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--elevation-1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .post-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--elevation-2);
-    }
-
-    .post-content {
-      padding: 1.5rem;
-    }
-
-    .post-category {
-      color: var(--primary);
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    .post-title {
-      margin: 0.5rem 0;
-      color: var(--on-surface);
-    }
-
-    .post-excerpt {
-      color: var(--on-surface-variant);
-      margin-bottom: 1rem;
-    }
-
-    .post-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--on-surface-variant);
-      font-size: 0.875rem;
-    }
-
-    .read-more {
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { 
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes growWidth {
-      from { transform: scaleX(0); }
-      to { transform: scaleX(1); }
-    }
-
-    .animate-up {
-      opacity: 0;
-      animation: slideUp 0.6s ease forwards;
-    }
-
-    .animate-up-delay-1 {
-      opacity: 0;
-      animation: slideUp 0.6s ease 0.2s forwards;
-    }
-
-    .animate-up-delay-2 {
-      opacity: 0;
-      animation: slideUp 0.6s ease 0.4s forwards;
-    }
-
-    .animate-fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .animate-fade-in-delay-1 {
-      opacity: 0;
-      animation: fadeIn 1s ease 0.3s forwards;
-    }
-
-    .animate-width {
-      animation-delay: var(--delay);
-    }
-
-    @media (max-width: 768px) {
-      .hero-section {
-        min-height: 50vh;
-      }
-
-      .post-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <script>
-    // Typing Animation
-    const typingAnimation = document.querySelector('.typing-animation');
-    const text = typingAnimation!.textContent;
-const typingSpeed = 100;
-
-let index = 0;
-
-function type() {
-  typingAnimation!.textContent = text!.slice(0, index);
-
-  if (index < text!.length) {
-    index++;
-    setTimeout(type, typingSpeed);
-  }
-}
-
-type();
-  </script>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {featuredProjects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          category={project.category}
+          excerpt={project.excerpt}
+          techStack={project.techStack}
+          url={project.url}
+          specs={project.specs}
+          featured={project.featured}
+        />
+      ))}
+    </div>
+  </section>
 </Layout>

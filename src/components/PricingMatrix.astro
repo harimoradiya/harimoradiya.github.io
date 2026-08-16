@@ -1,0 +1,95 @@
+---
+// src/components/PricingMatrix.astro
+const tiers = [
+  {
+    name: 'Free Tier',
+    price: '$0',
+    description: 'Essential TV remote functionality for casual users.',
+    badge: 'Included',
+    badgeStyle: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300',
+    features: [
+      { text: 'Standard D-Pad TV Navigation', included: true },
+      { text: 'Volume & Power Control', included: true },
+      { text: 'Basic Wi-Fi Auto-Discovery', included: true },
+      { text: 'Ad-Free Experience', included: false },
+      { text: 'Trackpad & Touch Gestures', included: false },
+      { text: 'Keyboard Text Typing', included: false },
+      { text: 'Quick App Launch Grid', included: false },
+    ],
+  },
+  {
+    name: 'Pro (In-App Purchase)',
+    price: '$1.99',
+    period: '/ month or $9.99 Lifetime',
+    description: 'Complete premium remote control power features with zero distraction.',
+    badge: 'Popular',
+    badgeStyle: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700',
+    popular: true,
+    features: [
+      { text: 'Standard D-Pad TV Navigation', included: true },
+      { text: 'Volume & Power Control', included: true },
+      { text: 'Basic Wi-Fi Auto-Discovery', included: true },
+      { text: '100% Ad-Free Experience', included: true },
+      { text: 'Trackpad & Touch Gestures', included: true },
+      { text: 'Keyboard Text Typing', included: true },
+      { text: 'Quick App Launch Grid', included: true },
+    ],
+  },
+];
+---
+
+<div class="mt-8">
+  <div class="mb-6">
+    <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Pricing Matrix & In-App Purchases</h3>
+    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+      Compare features available in the free version versus the Pro upgrade.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {tiers.map((tier) => (
+      <div
+        class={`relative rounded-2xl p-6 transition-all duration-200 ${
+          tier.popular
+            ? 'bg-zinc-900 text-zinc-100 dark:bg-zinc-900 dark:text-zinc-100 ring-2 ring-emerald-500/50 shadow-lg'
+            : 'bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100'
+        }`}
+      >
+        <div class="flex items-center justify-between">
+          <h4 class="text-lg font-bold">{tier.name}</h4>
+          <span class={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${tier.badgeStyle}`}>
+            {tier.badge}
+          </span>
+        </div>
+
+        <div class="mt-4 flex items-baseline gap-1">
+          <span class="text-3xl font-extrabold tracking-tight">{tier.price}</span>
+          {tier.period && <span class={`text-xs ${tier.popular ? 'text-zinc-400' : 'text-zinc-500 dark:text-zinc-400'}`}>{tier.period}</span>}
+        </div>
+
+        <p class={`mt-2 text-xs leading-relaxed ${tier.popular ? 'text-zinc-400' : 'text-zinc-500 dark:text-zinc-400'}`}>
+          {tier.description}
+        </p>
+
+        <ul class="mt-6 space-y-3 text-xs">
+          {tier.features.map((feat) => (
+            <li class="flex items-center gap-2.5">
+              {feat.included ? (
+                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              ) : (
+                <svg class={`w-4 h-4 shrink-0 ${tier.popular ? 'text-zinc-600' : 'text-zinc-300 dark:text-zinc-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+              <span class={feat.included ? '' : tier.popular ? 'text-zinc-500 line-through' : 'text-zinc-400 dark:text-zinc-600 line-through'}>
+                {feat.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>

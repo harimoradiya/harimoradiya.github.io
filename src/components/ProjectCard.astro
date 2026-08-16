@@ -1,0 +1,73 @@
+---
+// src/components/ProjectCard.astro
+import SpecBadge from './SpecBadge.astro';
+
+interface Props {
+  title: string;
+  category: string;
+  excerpt: string;
+  techStack: string;
+  url: string;
+  specs?: string[];
+  featured?: boolean;
+}
+
+const { title, category, excerpt, techStack, url, specs = [], featured = false } = Astro.props;
+const isExternal = url.startsWith('http');
+---
+
+<a
+  href={url}
+  target={isExternal ? '_blank' : '_self'}
+  rel={isExternal ? 'noopener noreferrer' : undefined}
+  class={`group relative flex flex-col justify-between p-6 rounded-2xl border transition-all duration-300 ${
+    featured
+      ? 'bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900/90 dark:to-zinc-900/40 border-zinc-300 dark:border-zinc-700/80 shadow-sm hover:shadow-md hover:border-zinc-400 dark:hover:border-zinc-600'
+      : 'bg-white dark:bg-zinc-900/40 border-zinc-200/80 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm hover:shadow'
+  }`}
+>
+  <div>
+    <!-- Category & Arrow Header -->
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-mono font-medium tracking-wide uppercase text-zinc-500 dark:text-zinc-400">
+        {category}
+      </span>
+      <div class="text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+        {isExternal ? (
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        ) : (
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        )}
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+      {title}
+    </h3>
+
+    <!-- Excerpt -->
+    <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed">
+      {excerpt}
+    </p>
+
+    <!-- Spec Badges if passed -->
+    {specs.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        {specs.map((spec) => (
+          <SpecBadge spec={spec} />
+        ))}
+      </div>
+    )}
+  </div>
+
+  <!-- Tech Stack Footer -->
+  <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/60 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
+    <span class="font-mono truncate">{techStack}</span>
+    <span class="font-medium group-hover:underline ml-2 shrink-0">View &rarr;</span>
+  </div>
+</a>

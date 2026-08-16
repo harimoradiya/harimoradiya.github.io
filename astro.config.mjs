@@ -1,10 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
-// export default {}
-
 export default defineConfig({
-    site: 'https://harimoradiya.github.io',
-    base: '/',
-  })
+  site: 'https://harimoradiya.github.io',
+  base: '/',
+  integrations: [tailwind()],
+});

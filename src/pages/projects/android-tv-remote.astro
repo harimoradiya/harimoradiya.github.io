@@ -1,0 +1,142 @@
+---
+// src/pages/projects/android-tv-remote.astro
+import Layout from '../../layouts/Layout.astro';
+import SpecBadge from '../../components/SpecBadge.astro';
+
+const specs = ['100% Free', 'Open Source', 'No Ads', 'No IAP'];
+
+const links = [
+  {
+    label: 'Google Play Store',
+    href: 'https://play.google.com/store/apps/details?id=com.hari.androidtvremote',
+    icon: 'playstore',
+    primary: true,
+  },
+  {
+    label: 'GitHub Repository',
+    href: 'https://github.com/harimoradiya/androidtvremote',
+    icon: 'github',
+    primary: false,
+  },
+];
+
+const features = [
+  {
+    title: 'Zero Ads & Zero In-App Purchases',
+    description: '100% community-focused utility built for speed and utility. Free forever with no tracking or paywalls.',
+  },
+  {
+    title: 'Instant Wi-Fi Auto-Discovery',
+    description: 'Uses mDNS and Network Service Discovery (NSD) to instantly locate Android TVs on your local network without manual IP entry.',
+  },
+  {
+    title: 'Low Latency Socket Protocol',
+    description: 'Direct socket communication protocol for instant tactile response during D-pad navigation and fast typing.',
+  },
+  {
+    title: 'Modern Jetpack Compose UI',
+    description: 'Clean Material You user interface built with Kotlin Coroutines and Jetpack Compose for smooth 60fps animations.',
+  },
+];
+---
+
+<Layout
+  title="Android TV Remote — 100% Free & Open Source Android App"
+  description="Open-source, ad-free Android TV remote control application for Android smartphones. Built with Kotlin and native sockets."
+>
+  <div class="space-y-10">
+    <!-- Back Button -->
+    <div>
+      <a
+        href="/"
+        class="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+      >
+        &larr; Back to Overview
+      </a>
+    </div>
+
+    <!-- Header & Badge Section -->
+    <div class="space-y-4 pb-8 border-b border-zinc-200/80 dark:border-zinc-800/80">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-medium uppercase bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+          Android Native
+        </span>
+        {specs.map((spec) => (
+          <SpecBadge spec={spec} />
+        ))}
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Android TV Remote
+      </h1>
+
+      <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl leading-relaxed">
+        An ultra-fast, lightweight, open-source TV remote control for Android devices. Designed to replace physical television remotes with seamless Wi-Fi auto-discovery, zero advertisements, and zero paywalls.
+      </p>
+
+      <!-- Action Badges / Store Links -->
+      <div class="flex flex-wrap items-center gap-3 pt-4">
+        <a
+          href={links[0].href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm hover:shadow transition-all duration-200"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M3 20.5v-17c0-.55.45-1 1-1h.24l10.37 9.85-10.37 9.85H4c-.55 0-1-.45-1-1zm14.28-7.15l2.42-1.39c.64-.37.64-1.33 0-1.7l-2.42-1.39-2.73 2.74 2.73 2.74zm-3.88-3.89L3.92 2.1c-.26-.15-.57-.15-.83 0l10.31 9.8 3.0.01z" />
+          </svg>
+          <span>Get it on Google Play</span>
+        </a>
+
+        <a
+          href={links[1].href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-sm bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 text-zinc-100 dark:text-zinc-950 shadow-sm transition-all duration-200"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span>View Source on GitHub</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Technical Specs Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800">
+        <div class="text-xs font-mono uppercase text-zinc-400 dark:text-zinc-500 font-semibold">License</div>
+        <div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mt-1">MIT Open Source</div>
+        <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Free to modify, inspect, and contribute</div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800">
+        <div class="text-xs font-mono uppercase text-zinc-400 dark:text-zinc-500 font-semibold">Monetization</div>
+        <div class="text-lg font-bold text-emerald-600 dark:text-emerald-400 mt-1">100% Free & No Ads</div>
+        <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Zero paywalls, zero full-screen popups</div>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800">
+        <div class="text-xs font-mono uppercase text-zinc-400 dark:text-zinc-500 font-semibold">Architecture</div>
+        <div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mt-1">Kotlin & Sockets</div>
+        <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Direct Wi-Fi socket communication</div>
+      </div>
+    </div>
+
+    <!-- Core Features Grid -->
+    <div class="space-y-6">
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Key Architectural Features
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {features.map((feature) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/40 border border-zinc-200/80 dark:border-zinc-800/80">
+            <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">{feature.title}</h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

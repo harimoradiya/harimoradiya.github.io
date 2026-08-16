@@ -1,0 +1,34 @@
+---
+// src/components/SpecBadge.astro
+interface Props {
+  spec: '100% Free' | 'Open Source' | 'No Ads' | 'No IAP' | 'Built with Flutter' | 'Closed Source' | 'Contains Ads' | 'Offers IAP (Freemium)' | string;
+  variant?: 'success' | 'warning' | 'neutral' | 'info';
+}
+
+const { spec, variant } = Astro.props;
+
+// Determine default variant if not explicitly passed
+let badgeVariant = variant;
+if (!badgeVariant) {
+  if (['100% Free', 'Open Source', 'No Ads', 'No IAP'].includes(spec)) {
+    badgeVariant = 'success';
+  } else if (['Contains Ads', 'Offers IAP (Freemium)'].includes(spec)) {
+    badgeVariant = 'warning';
+  } else if (['Built with Flutter', 'Closed Source'].includes(spec)) {
+    badgeVariant = 'info';
+  } else {
+    badgeVariant = 'neutral';
+  }
+}
+
+const variantStyles = {
+  success: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50',
+  warning: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800/50',
+  info: 'bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800/50',
+  neutral: 'bg-zinc-100 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700/60',
+};
+---
+
+<span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${variantStyles[badgeVariant]}`}>
+  {spec}
+</span>
